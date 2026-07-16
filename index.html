@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="light scroll-smooth" lang="en">
 
 <head>
@@ -3472,6 +3472,14 @@
       };
 
       if (closeVideoLightboxBtn) closeVideoLightboxBtn.addEventListener('click', closeVideoLightbox);
+    });
+
+    window.addEventListener('pageshow', function (event) {
+      // If the page is loaded from the browser history cache (persisted state)
+      if (event.persisted) {
+        // Force a complete window reload to reset all CSS styling, modals, and hidden elements to their pristine initial states
+        window.location.reload();
+      }
     });
   </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

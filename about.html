@@ -1001,6 +1001,20 @@
   </div>
 
   <script>
+    // Browser History State Handler
+    window.addEventListener('pageshow', function (event) {
+      // Detect if the page is being navigated from cache or history
+      if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+        document.body.classList.remove('fade-out');
+      }
+    });
+
+    // Inject a clean popstate listener to force a fresh index.html request on back navigation
+    window.history.pushState(null, '', window.location.href);
+    window.addEventListener('popstate', function () {
+      window.location.href = 'index.html';
+    });
+
     // Smooth Anchor Transition Intercept
     document.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', function (e) {
