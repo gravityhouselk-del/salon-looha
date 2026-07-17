@@ -593,7 +593,8 @@
 
       <div
         class="max-w-[1200px] mx-auto px-6 lg:px-24 w-full pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="font-label text-xs text-white/60 uppercase tracking-wider">© 2026 SALON LOOHA. DESIGNED BY GRAVITY HOUSE.</p>
+        <p class="font-label text-xs text-white/60 uppercase tracking-wider">© 2026 SALON LOOHA. DESIGNED BY GRAVITY
+          HOUSE.</p>
         <p class="font-label text-xs text-white/60 uppercase tracking-wider">Ave Maria Rd, Negombo 11410</p>
       </div>
 
@@ -623,12 +624,30 @@
           <p class="font-body text-sm text-[#1a1c1a]/70 mt-1">Choose your preferred method to schedule a session.</p>
         </div>
         <div class="mb-6">
-          <a href="https://calendar.app.google/8M58acmCLixe6Hav6" target="_blank"
-            class="bg-[#adbb98] text-white hover:bg-[#9cae86] transition-all duration-300 px-6 py-4 rounded-xl font-label text-xs font-bold tracking-[0.12em] uppercase shadow-md flex justify-center items-center gap-3 w-full text-center">
-            <span class="material-symbols-outlined text-lg">calendar_month</span>Book via Google Calendar
-          </a>
-          <p class="text-[11px] text-[#1a1c1a]/50 text-center mt-2 font-body">Best for international clients (Auto
-            Time-Zone conversion)</p>
+          <!-- Calendly link widget begin -->
+          <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+          <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+          <button
+            class="w-full py-4 px-6 bg-[#566345] hover:bg-[#455037] text-white font-semibold rounded-lg shadow-md transition-all duration-300 flex items-center justify-center gap-3 tracking-wide uppercase text-sm mx-auto"
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/swankybydimalka/30min'});return false;">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Book via Calendly
+          </button>
+          <!-- Calendly link widget end -->
+          <div class="mt-4 text-center">
+            <a href="index.html?open=menu"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#566345] hover:opacity-70 uppercase tracking-wider transition-all duration-300">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                </path>
+              </svg>
+              View Full Menu
+            </a>
+          </div>
         </div>
         <div class="relative flex py-3 items-center">
           <div class="flex-grow border-t border-black/10"></div>
@@ -975,6 +994,15 @@
       <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+      </svg>
+    </a>
+    <a href="https://www.tiktok.com/@loohaunisexsalon?_r=1&_t=ZS-986LYGqBx13" target="_blank" rel="noopener noreferrer"
+      class="w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1a1c1a] shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300 transform hover:-translate-x-1 cursor-pointer group"
+      aria-label="TikTok">
+      <svg class="w-5 h-5 block" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+        style="display: block; margin: auto;">
+        <path
+          d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.56 2.89 2.89 0 0 1 2.54-4.34c.19 0 .39.02.58.06V9.5a6.35 6.35 0 0 0-3.12.01A6.33 6.33 0 0 0 2 15.83a6.34 6.34 0 0 0 10.86 4.44A6.29 6.29 0 0 0 15.82 16V8.52a8.27 8.27 0 0 0 4.77 1.52V6.59c-.36 0-.7-.03-1-.1z" />
       </svg>
     </a>
     <a href="https://api.whatsapp.com/send?phone=94776201254" target="_blank"
