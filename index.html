@@ -340,7 +340,7 @@
     <div id="nav-wrapper"
       class="fixed top-16 left-6 right-6 z-[100] flex flex-col items-center w-[calc(100%-48px)] pointer-events-none transition-all duration-500">
       <nav id="floating-navbar"
-        class="w-full max-w-[1280px] bg-white/70 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-4 sm:px-6 lg:px-10 py-3 sm:py-4 flex flex-wrap sm:flex-nowrap justify-between items-center border border-black/5 transition-all duration-500 pointer-events-auto">
+        class="relative z-50 w-full max-w-[1280px] bg-white/70 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-4 sm:px-6 lg:px-10 py-3 sm:py-4 flex flex-wrap sm:flex-nowrap justify-between items-center border border-black/5 transition-all duration-500 pointer-events-auto">
         <a id="nav-logo" href="index.html"
           class="font-headline text-xl sm:text-2xl font-bold text-[#1a1c1a] tracking-wider uppercase transition-all duration-500">
           SALON LOOHA
@@ -373,7 +373,7 @@
 
       <!-- Mobile Menu Dropdown Drawer -->
       <div id="mobile-menu"
-        class="hidden opacity-0 -translate-y-4 w-full max-w-[1280px] bg-white/95 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.1)] mt-2 border border-black/5 flex-col p-6 gap-6 pointer-events-auto transition-all duration-300 lg:hidden text-center">
+        class="relative z-40 hidden opacity-0 -translate-y-4 w-full max-w-[1280px] bg-white/95 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.1)] mt-2 border border-black/5 flex-col p-6 gap-6 pointer-events-auto transition-all duration-300 lg:hidden text-center">
         <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
           href="index.html">Home</a>
         <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
@@ -392,8 +392,9 @@
     <!-- Hero Section -->
     <div class="relative w-full h-screen overflow-hidden bg-[#faf9f5]" style="width: 100%; height: 100vh;">
       <div class="absolute inset-0 overflow-hidden z-0 bg-black/5" style="width: 100%; height: 100%;">
-        <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover pointer-events-none" id="hero-video" fetchpriority="high" width="100%" height="100%">
-          <source src="images/hero-video.mp4" type="video/mp4">
+        <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover pointer-events-none"
+          id="hero-video" fetchpriority="high">
+          <source src="Hero-Video/hero-video.mp4" type="video/mp4">
         </video>
       </div>
       <div class="absolute inset-0 z-10 flex flex-col justify-center items-center text-center px-6"
@@ -414,7 +415,7 @@
 
     <!-- Services Section -->
     <section id="services-section" class="bg-white py-24 lg:py-32" data-nav-theme="light"
-      style="scroll-margin-top: 100px;">
+      style="scroll-margin-top: 140px;">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-24">
         <div class="max-w-3xl mx-auto pt-8 md:pt-12 mb-16 text-center flex flex-col items-center justify-center"
           data-aos="fade-up">
@@ -533,7 +534,7 @@
     </section>
 
     <!-- Experts -->
-    <section id="experts" class="py-16 md:py-24 pb-24 md:pb-32 bg-white w-full">
+    <section id="experts" class="py-16 md:py-24 pb-24 md:pb-32 bg-white w-full" style="scroll-margin-top: 140px;">
       <div class="max-w-3xl mx-auto pt-8 md:pt-12 mb-16 text-center flex flex-col items-center justify-center">
         <h2 class="luxury-float-header font-display text-4xl font-bold mb-12">Meet Our Experts</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -566,7 +567,8 @@
     </section>
 
     <!-- Reviews -->
-    <section id="reviews" class="bg-[#adbb98] text-white py-24 lg:py-32" data-nav-theme="dark">
+    <section id="reviews" class="bg-[#adbb98] text-white py-24 lg:py-32" data-nav-theme="dark"
+      style="scroll-margin-top: 140px;">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-24">
         <div class="max-w-3xl mx-auto pt-8 md:pt-12 mb-16 text-center flex flex-col items-center justify-center">
           <h2 class="luxury-float-header font-headline text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">
@@ -583,7 +585,8 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery-section" class="bg-white py-24 lg:py-32" data-nav-theme="light">
+    <section id="gallery-section" class="bg-white py-24 lg:py-32" data-nav-theme="light"
+      style="scroll-margin-top: 140px;">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-24">
         <div class="max-w-3xl mx-auto pt-8 md:pt-12 mb-16 text-center flex flex-col items-center justify-center">
           <span class="material-symbols-outlined text-4xl text-[#1a1c1a] mb-4">photo_camera</span>
@@ -638,7 +641,8 @@
     </section>
 
     <!-- Looha Reels Section -->
-    <section id="reels-section" class="pt-2 pb-16 bg-white w-full" data-nav-theme="light">
+    <section id="reels-section" class="pt-2 pb-16 bg-white w-full" data-nav-theme="light"
+      style="scroll-margin-top: 140px;">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-24">
         <div class="text-center pt-0 mb-10 select-none">
           <span class="font-label text-xs uppercase tracking-[0.2em] text-[#adbb98] font-bold block mb-3">Reels
@@ -732,7 +736,8 @@
     </section>
 
     <!-- Visit Our Sanctuary Section -->
-    <section id="about-section" class="bg-white py-24 lg:py-32 border-t border-on-surface/10" data-nav-theme="light">
+    <section id="about-section" class="bg-white py-24 lg:py-32 border-t border-on-surface/10" data-nav-theme="light"
+      style="scroll-margin-top: 140px;">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="flex flex-col gap-8 pt-8 md:pt-12">
           <h2 class="luxury-float-header font-headline text-3xl lg:text-4xl font-bold text-[#1a1c1a] tracking-tight">
@@ -3285,15 +3290,6 @@
       }
 
       // Preloader Lifecycle
-      const heroVideo = document.getElementById('hero-video');
-      if (heroVideo) {
-        const jumpToMidPoint = () => {
-          if (heroVideo.duration) heroVideo.currentTime = heroVideo.duration / 2;
-          else heroVideo.currentTime = 5;
-        };
-        if (heroVideo.readyState >= 1) jumpToMidPoint();
-        else heroVideo.addEventListener('loadedmetadata', jumpToMidPoint);
-      }
 
       const preloader = document.getElementById('preloader');
       const counterText = document.getElementById('counter-text');

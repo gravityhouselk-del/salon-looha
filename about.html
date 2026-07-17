@@ -361,13 +361,13 @@
 <body style="background-color: #ffffff !important;"
   class="bg-white text-[#1a1c1a] font-body antialiased selection:bg-[#adbb98] selection:text-white overflow-x-hidden fade-transition">
 
-  <main class="relative z-10 w-auto m-[20px] rounded-[32px] overflow-hidden bg-white">
+  <main class="relative z-10 w-auto m-[20px] rounded-[32px] overflow-hidden bg-[#faf9f5]">
 
     <!-- Navbar Area -->
     <div id="nav-wrapper"
-      class="sticky top-[20px] left-0 right-0 z-50 flex justify-center w-full px-4 lg:px-12 pt-6 transition-all duration-1000 ease-out">
+      class="fixed top-16 left-6 right-6 z-[100] flex flex-col items-center w-[calc(100%-48px)] pointer-events-none transition-all duration-500">
       <nav id="floating-navbar"
-        class="w-full max-w-[1280px] bg-white/70 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-4 sm:px-6 lg:px-10 py-3 sm:py-4 flex flex-wrap sm:flex-nowrap justify-between items-center pointer-events-auto border border-black/5 transition-all duration-500">
+        class="relative z-50 w-full max-w-[1280px] bg-white/70 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-4 sm:px-6 lg:px-10 py-3 sm:py-4 flex flex-wrap sm:flex-nowrap justify-between items-center border border-black/5 transition-all duration-500 pointer-events-auto">
         <a id="nav-logo" href="index.html"
           class="font-headline text-xl sm:text-2xl font-bold text-[#1a1c1a] tracking-wider uppercase transition-all duration-500">
           SALON LOOHA
@@ -384,18 +384,36 @@
           <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-colors duration-500 font-label text-xs uppercase font-bold tracking-[0.15em]"
             href="index.html#gallery-section">Gallery</a>
           <a class="nav-link text-[#1a1c1a] border-b-[2px] border-[#adbb98] pb-0.5 font-label text-xs uppercase font-bold tracking-[0.15em] transition-colors duration-500"
-            href="#dimalka">About</a>
+            href="about.html#dimalka">About</a>
         </div>
         <div class="flex items-center gap-3 sm:gap-6 mt-2 sm:mt-0">
           <button id="open-booking-btn-nav"
-            class="bg-[#adbb98] text-white hover:bg-[#9cae86] transition-all duration-500 px-4 py-2 sm:px-8 sm:py-3 rounded-full font-label text-[10px] sm:text-xs font-bold tracking-[0.15em] uppercase shadow-md hover:-translate-y-0.5 inline-block text-center cursor-pointer">Book
-            Appointment</button>
-          <button id="nav-menu-btn"
+            class="bg-[#adbb98] text-white hover:bg-[#9cae86] transition-all duration-500 px-4 py-2 sm:px-8 sm:py-3 rounded-full font-label text-[10px] sm:text-xs font-bold tracking-[0.15em] uppercase shadow-md hover:-translate-y-0.5 inline-block text-center cursor-pointer">
+            Book Appointment
+          </button>
+          <button id="mobile-menu-btn"
             class="lg:hidden text-[#1a1c1a] transition-colors duration-500 flex items-center justify-center">
             <span class="material-symbols-outlined text-2xl sm:text-3xl">menu</span>
           </button>
         </div>
       </nav>
+
+      <!-- Mobile Menu Dropdown Drawer -->
+      <div id="mobile-menu"
+        class="relative z-40 hidden opacity-0 -translate-y-4 w-full max-w-[1280px] bg-white/95 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.1)] mt-2 border border-black/5 flex-col p-6 gap-6 pointer-events-auto transition-all duration-300 lg:hidden text-center">
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+          href="index.html">Home</a>
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+          href="index.html#services-section">Services</a>
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+          href="index.html#experts">Experts</a>
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+          href="index.html#reviews">Reviews</a>
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+          href="index.html#gallery-section">Gallery</a>
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+          href="about.html#dimalka">About</a>
+      </div>
     </div>
 
     <!-- HERO/TITLE SECTION -->
@@ -410,7 +428,7 @@
 
     <!-- SECTION 1: DIMALKA NUWANTHI -->
     <section id="dimalka" class="luxury-elena bg-white py-24 lg:py-32 border-t border-on-surface/10"
-      data-nav-theme="light">
+      data-nav-theme="light" style="scroll-margin-top: 40px;">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div
           class="reveal relative h-[500px] lg:h-[650px] rounded-[3rem] overflow-hidden shadow-2xl border border-black/5 group">
@@ -455,7 +473,8 @@
     </section>
 
     <!-- SECTION 2: SADEE SUBANDRIYO -->
-    <section id="sadee" class="luxury-sofia bg-[#faf9f5] py-24 lg:py-32" data-nav-theme="light">
+    <section id="sadee" class="luxury-sofia bg-[#faf9f5] py-24 lg:py-32" data-nav-theme="light"
+      style="scroll-margin-top: 140px;">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="flex flex-col gap-6 order-2 lg:order-1">
           <h2 class="font-headline text-4xl lg:text-5xl font-bold text-[#1a1c1a] tracking-tight">Sadee Subandriyo</h2>
@@ -497,7 +516,7 @@
     <!-- Transform CTA Section -->
     <section
       class="bg-white py-24 lg:py-32 flex flex-col items-center justify-center text-center border-t border-on-surface/10"
-      data-nav-theme="light">
+      data-nav-theme="light" style="scroll-margin-top: 140px;">
       <h2 class="font-headline text-3xl lg:text-4xl font-bold text-[#1a1c1a] mb-6 tracking-tight animate-zoom">Ready to
         Transform?</h2>
       <p class="font-body text-[#1a1c1a]/70 mb-10 max-w-lg text-lg">Schedule a personalized consultation with our
@@ -510,7 +529,8 @@
     </section>
 
     <!-- Sanctuary Visit Details Container -->
-    <section id="about-section" class="bg-white py-24 lg:py-32 border-t border-on-surface/10" data-nav-theme="light">
+    <section id="about-section" class="bg-white py-24 lg:py-32 border-t border-on-surface/10" data-nav-theme="light"
+      style="scroll-margin-top: 140px;">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="flex flex-col gap-8">
           <h2 class="font-headline text-3xl lg:text-4xl font-bold text-[#1a1c1a] tracking-tight">Visit Our Sanctuary
@@ -601,7 +621,7 @@
 
       <!-- Universal Scroll Up Arrow -->
       <div class="flex justify-center pt-10 w-full">
-        <a href="#top"
+        <a href="#" onclick="event.stopPropagation(); window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
           class="flex items-center justify-center w-12 h-12 rounded-full border border-white/40 bg-white/10 text-white hover:bg-white hover:text-[#1a1c1a] transition-all duration-300 animate-bounce cursor-pointer">
           <span class="material-symbols-outlined text-xl font-bold">arrow_upward</span>
         </a>
@@ -718,7 +738,9 @@
       const navbar = document.getElementById('floating-navbar');
       const logo = document.getElementById('nav-logo');
       const links = document.querySelectorAll('.nav-link');
-      const menuBtn = document.getElementById('nav-menu-btn');
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
       const openNavCta = document.getElementById('open-booking-btn-nav');
       const openBodyCta = document.getElementById('open-booking-btn-body');
       const sections = document.querySelectorAll('[data-nav-theme]');
@@ -778,6 +800,32 @@
           }
         }
       };
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+              mobileMenu.classList.remove('opacity-0', '-translate-y-4');
+            }, 10);
+          } else {
+            mobileMenu.classList.add('opacity-0', '-translate-y-4');
+            setTimeout(() => {
+              mobileMenu.classList.add('hidden');
+            }, 300);
+          }
+        });
+
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0', '-translate-y-4');
+            setTimeout(() => {
+              mobileMenu.classList.add('hidden');
+            }, 300);
+          });
+        });
+      }
 
       window.addEventListener('scroll', () => {
         const navRect = navbar.getBoundingClientRect();
@@ -1070,6 +1118,30 @@
           setTimeout(() => {
             window.location.href = 'index.html';
           }, 300);
+        }
+      });
+    });
+
+    // Handle direct URL hash links on load
+    window.addEventListener('load', () => {
+      if (window.location.hash === '#dimalka') {
+        const targetSection = document.getElementById('dimalka');
+        if (targetSection) {
+          setTimeout(() => {
+            const y = targetSection.getBoundingClientRect().top + window.scrollY - 40;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }, 150);
+        }
+      }
+    });
+
+    // Intercept About link on the About page to prevent reload
+    document.querySelectorAll('a[href="about.html#dimalka"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const dimalkaSection = document.getElementById('dimalka');
+        if (dimalkaSection) {
+          dimalkaSection.scrollIntoView({ behavior: 'auto' });
         }
       });
     });
