@@ -390,15 +390,15 @@
     </div>
 
     <!-- Hero Section -->
-    <div class="relative w-full h-screen overflow-hidden bg-[#faf9f5]">
-      <div class="absolute inset-0 overflow-hidden z-0 bg-black/5">
-        <video id="hero-video" autoplay loop muted playsinline preload="auto"
-          class="w-full h-full object-cover pointer-events-none">
+    <div class="relative w-full h-screen overflow-hidden bg-[#faf9f5]" style="width: 100%; height: 100vh;">
+      <div class="absolute inset-0 overflow-hidden z-0 bg-black/5" style="width: 100%; height: 100%;">
+        <video id="hero-video" autoplay loop muted playsinline preload="auto" fetchpriority="high" width="100%"
+          height="100%" class="w-full h-full object-cover pointer-events-none">
           <source src="Hero-Video/0711(2).mp4" type="video/mp4">
         </video>
       </div>
       <div class="absolute inset-0 z-10 flex flex-col justify-center items-center text-center px-6"
-        data-nav-theme="dark">
+        data-nav-theme="dark" style="width: 100%; height: 100%;">
         <div class="max-w-4xl mx-auto flex flex-col gap-10 items-center justify-end h-full pb-20 md:pb-28">
           <button id="open-booking-btn-hero"
             class="border-2 border-white hero-white-glow-btn px-12 py-5 text-sm md:text-base tracking-[0.2em] bg-[#adbb98] text-white rounded-full hover:bg-[#9cae86] transition-all shadow-xl hover:-translate-y-1 cursor-pointer font-bold font-label uppercase flex items-center justify-center">
