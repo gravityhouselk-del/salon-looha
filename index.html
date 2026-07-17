@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
   <title>Salon Looha - Luxury Beauty & Aesthetics</title>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
@@ -332,17 +334,15 @@
     </div>
   </div>
 
-  <div class="fixed inset-0 z-[100] pointer-events-none border-[20px] border-white rounded-[52px]"></div>
-
-  <main class="relative z-10 w-full px-[20px] pt-0 pb-[20px]">
+  <main class="relative z-10 w-auto m-[20px] rounded-[32px] overflow-hidden bg-[#faf9f5]">
 
     <!-- Fixed/Sticky Elegant Luxury Navbar -->
     <div id="nav-wrapper"
       class="fixed top-16 left-6 right-6 z-[100] flex flex-col items-center w-[calc(100%-48px)] pointer-events-none transition-all duration-500">
       <nav id="floating-navbar"
-        class="w-full max-w-[1280px] bg-white/70 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-6 lg:px-10 py-4 flex justify-between items-center border border-black/5 transition-all duration-500 pointer-events-auto">
+        class="w-full max-w-[1280px] bg-white/70 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-4 sm:px-6 lg:px-10 py-3 sm:py-4 flex flex-wrap sm:flex-nowrap justify-between items-center border border-black/5 transition-all duration-500 pointer-events-auto">
         <a id="nav-logo" href="index.html"
-          class="font-headline text-2xl font-bold text-[#1a1c1a] tracking-wider uppercase transition-all duration-500">
+          class="font-headline text-xl sm:text-2xl font-bold text-[#1a1c1a] tracking-wider uppercase transition-all duration-500">
           SALON LOOHA
         </a>
         <div class="hidden lg:flex gap-10 items-center">
@@ -359,13 +359,14 @@
           <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-all duration-500 font-label text-xs uppercase font-bold tracking-[0.15em]"
             href="about.html#dimalka">About</a>
         </div>
-        <div class="flex items-center gap-6">
+        <div class="flex items-center gap-3 sm:gap-6">
           <button id="open-booking-btn-nav"
-            class="bg-[#adbb98] text-white hover:bg-[#9cae86] transition-all duration-500 px-8 py-3 rounded-full font-label text-xs font-bold tracking-[0.15em] uppercase shadow-md hover:-translate-y-0.5 inline-block cursor-pointer">
+            class="bg-[#adbb98] text-white hover:bg-[#9cae86] transition-all duration-500 px-4 py-2 sm:px-8 sm:py-3 rounded-full font-label text-[10px] sm:text-xs font-bold tracking-[0.15em] uppercase shadow-md hover:-translate-y-0.5 inline-block cursor-pointer">
             Book Appointment
           </button>
-          <button id="mobile-menu-btn" class="lg:hidden text-[#1a1c1a] transition-colors duration-500">
-            <span class="material-symbols-outlined text-3xl">menu</span>
+          <button id="mobile-menu-btn"
+            class="lg:hidden text-[#1a1c1a] transition-colors duration-500 flex items-center justify-center">
+            <span class="material-symbols-outlined text-2xl sm:text-3xl">menu</span>
           </button>
         </div>
       </nav>
@@ -393,7 +394,7 @@
       <div class="absolute inset-0 overflow-hidden z-0 bg-black/5">
         <video id="hero-video" autoplay loop muted playsinline preload="auto"
           class="w-full h-full object-cover pointer-events-none">
-          <source src="Hero-Video/destination-wedding.mp4" type="video/mp4">
+          <source src="Hero-Video/0711(2).mp4" type="video/mp4">
         </video>
       </div>
       <div class="absolute inset-0 z-10 flex flex-col justify-center items-center text-center px-6"
@@ -1036,7 +1037,7 @@
 
   <!-- SERVICE EXPLORER POPUP MENU -->
   <div id="services-explorer-modal"
-    class="fixed inset-0 z-[200] bg-white/95 backdrop-blur-xl opacity-0 invisible transition-all duration-300 flex flex-col">
+    class="fixed inset-0 z-[200] bg-white/95 backdrop-blur-xl opacity-0 invisible transition-all duration-300 flex flex-col max-h-screen overflow-hidden">
     <div class="flex items-center justify-between px-8 py-6 border-b border-black/5 flex-shrink-0">
       <span class="font-headline text-3xl font-extrabold text-[#1a1c1a] tracking-widest">SALON LOOHA MENU</span>
       <button id="close-explorer-btn"
@@ -1045,29 +1046,22 @@
       </button>
     </div>
 
-    <div class="flex-1 flex overflow-hidden">
-      <div class="w-[320px] bg-[#faf9f5] border-r border-black/5 overflow-y-auto flex flex-col py-6 shrink-0 px-4"
+    <div class="flex-1 flex flex-col md:flex-row overflow-hidden">
+      <div
+        class="w-full md:w-[320px] bg-[#faf9f5] md:border-r border-b md:border-b-0 border-black/5 flex overflow-x-auto md:overflow-y-auto whitespace-nowrap md:whitespace-normal scrollbar-none md:scrollbar-default gap-2 md:gap-0 px-4 py-2 md:py-6 shrink-0 flex-row md:flex-col"
         id="explorer-tabs">
-        <div class="mb-4">
-          <button
-            class="tab-btn active w-full px-4 py-3 text-left font-label text-base font-extrabold uppercase tracking-wider text-[#566345] bg-[#566345]/10 border-l-4 border-[#566345] rounded-r-xl"
-            data-target="m-hair">💇 Hair Artistry</button>
-        </div>
-        <div class="mb-4">
-          <button
-            class="tab-btn w-full px-4 py-3 text-left font-label text-base font-semibold uppercase tracking-wider text-[#1a1c1a]/70 hover:text-[#1a1c1a] transition-all"
-            data-target="m-nails">💅 Nail Lounge</button>
-        </div>
-        <div class="mb-4">
-          <button
-            class="tab-btn w-full px-4 py-3 text-left font-label text-base font-semibold uppercase tracking-wider text-[#1a1c1a]/70 hover:text-[#1a1c1a] transition-all"
-            data-target="m-makeup">💄 Makeup & Glam</button>
-        </div>
-        <div class="mb-4">
-          <button
-            class="tab-btn w-full px-4 py-3 text-left font-label text-base font-semibold uppercase tracking-wider text-[#1a1c1a]/70 hover:text-[#1a1c1a] transition-all"
-            data-target="m-skin">🌿 Skin & Waxing</button>
-        </div>
+        <button
+          class="tab-btn active w-auto md:w-full px-4 py-2 md:py-3 text-left font-label text-xs sm:text-sm md:text-base font-extrabold uppercase tracking-wider text-[#566345] bg-[#566345]/10 border-l-4 border-[#566345] rounded-lg md:rounded-r-xl md:rounded-l-none flex-shrink-0 inline-flex md:flex items-center justify-center md:justify-start mb-0 md:mb-4"
+          data-target="m-hair">💇 Hair Artistry</button>
+        <button
+          class="tab-btn w-auto md:w-full px-4 py-2 md:py-3 text-left font-label text-xs sm:text-sm md:text-base font-medium md:font-semibold uppercase tracking-wider text-[#1a1c1a]/70 hover:text-[#1a1c1a] transition-all rounded-lg md:rounded-r-xl md:rounded-l-none flex-shrink-0 inline-flex md:flex items-center justify-center md:justify-start mb-0 md:mb-4"
+          data-target="m-nails">💅 Nail Lounge</button>
+        <button
+          class="tab-btn w-auto md:w-full px-4 py-2 md:py-3 text-left font-label text-xs sm:text-sm md:text-base font-medium md:font-semibold uppercase tracking-wider text-[#1a1c1a]/70 hover:text-[#1a1c1a] transition-all rounded-lg md:rounded-r-xl md:rounded-l-none flex-shrink-0 inline-flex md:flex items-center justify-center md:justify-start mb-0 md:mb-4"
+          data-target="m-makeup">💄 Makeup & Glam</button>
+        <button
+          class="tab-btn w-auto md:w-full px-4 py-2 md:py-3 text-left font-label text-xs sm:text-sm md:text-base font-medium md:font-semibold uppercase tracking-wider text-[#1a1c1a]/70 hover:text-[#1a1c1a] transition-all rounded-lg md:rounded-r-xl md:rounded-l-none flex-shrink-0 inline-flex md:flex items-center justify-center md:justify-start mb-0 md:mb-4"
+          data-target="m-skin">🌿 Skin & Waxing</button>
       </div>
 
       <div class="flex-1 overflow-y-auto p-10 lg:p-16 bg-white" id="explorer-panels">

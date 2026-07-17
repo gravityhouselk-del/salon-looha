@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
   <title>About Our Experts - Salon Looha</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
@@ -359,17 +361,15 @@
 <body style="background-color: #ffffff !important;"
   class="bg-white text-[#1a1c1a] font-body antialiased selection:bg-[#adbb98] selection:text-white overflow-x-hidden fade-transition">
 
-  <div class="fixed inset-0 z-[100] pointer-events-none border-[20px] border-white rounded-[52px]"></div>
-
-  <main class="relative z-10 w-full px-[20px] pt-[20px] pb-[20px]">
+  <main class="relative z-10 w-auto m-[20px] rounded-[32px] overflow-hidden bg-white">
 
     <!-- Navbar Area -->
     <div id="nav-wrapper"
       class="sticky top-[20px] left-0 right-0 z-50 flex justify-center w-full px-4 lg:px-12 pt-6 transition-all duration-1000 ease-out">
       <nav id="floating-navbar"
-        class="w-full max-w-[1280px] bg-white/70 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-6 lg:px-10 py-4 flex justify-between items-center pointer-events-auto border border-black/5 transition-all duration-500">
+        class="w-full max-w-[1280px] bg-white/70 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-4 sm:px-6 lg:px-10 py-3 sm:py-4 flex flex-wrap sm:flex-nowrap justify-between items-center pointer-events-auto border border-black/5 transition-all duration-500">
         <a id="nav-logo" href="index.html"
-          class="font-headline text-2xl font-bold text-[#1a1c1a] tracking-wider uppercase transition-all duration-500">
+          class="font-headline text-xl sm:text-2xl font-bold text-[#1a1c1a] tracking-wider uppercase transition-all duration-500">
           SALON LOOHA
         </a>
         <div class="hidden lg:flex gap-10 items-center">
@@ -386,12 +386,13 @@
           <a class="nav-link text-[#1a1c1a] border-b-[2px] border-[#adbb98] pb-0.5 font-label text-xs uppercase font-bold tracking-[0.15em] transition-colors duration-500"
             href="#dimalka">About</a>
         </div>
-        <div class="flex items-center gap-6">
+        <div class="flex items-center gap-3 sm:gap-6 mt-2 sm:mt-0">
           <button id="open-booking-btn-nav"
-            class="bg-[#adbb98] text-white hover:bg-[#9cae86] transition-all duration-500 px-8 py-3 rounded-full font-label text-xs font-bold tracking-[0.15em] uppercase shadow-md hover:-translate-y-0.5 inline-block text-center cursor-pointer">Book
+            class="bg-[#adbb98] text-white hover:bg-[#9cae86] transition-all duration-500 px-4 py-2 sm:px-8 sm:py-3 rounded-full font-label text-[10px] sm:text-xs font-bold tracking-[0.15em] uppercase shadow-md hover:-translate-y-0.5 inline-block text-center cursor-pointer">Book
             Appointment</button>
-          <button id="nav-menu-btn" class="lg:hidden text-[#1a1c1a] transition-colors duration-500">
-            <span class="material-symbols-outlined text-3xl">menu</span>
+          <button id="nav-menu-btn"
+            class="lg:hidden text-[#1a1c1a] transition-colors duration-500 flex items-center justify-center">
+            <span class="material-symbols-outlined text-2xl sm:text-3xl">menu</span>
           </button>
         </div>
       </nav>
