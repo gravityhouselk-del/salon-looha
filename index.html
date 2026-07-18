@@ -393,7 +393,8 @@
     <!-- Hero Section -->
     <div class="relative w-full h-screen overflow-hidden bg-[#faf9f5]" style="width: 100%; height: 100vh;">
       <div class="absolute inset-0 overflow-hidden z-0 bg-[#1a1c1a]" style="width: 100%; height: 100%;">
-        <video autoplay loop muted playsinline preload="auto" fetchpriority="high" class="w-full h-full object-cover pointer-events-none bg-transparent" id="hero-video">
+        <video autoplay loop muted playsinline preload="auto" fetchpriority="high"
+          class="w-full h-full object-cover pointer-events-none bg-transparent" id="hero-video">
           <source src="Hero-Video/hero-video.mp4" type="video/mp4">
         </video>
         <script>
@@ -403,7 +404,7 @@
               v.muted = true;
               v.setAttribute('muted', '');
               v.setAttribute('playsinline', '');
-              
+
               const playPromise = v.play();
               if (playPromise !== undefined) {
                 playPromise.catch(error => {
@@ -3316,14 +3317,15 @@
         });
       }
 
-      // Preloader Lifecycle
-
+      // ⚡ PRELOADER & HERO VIDEO DYNAMIC SYNC LIFECYCLE 
       const preloader = document.getElementById('preloader');
       const counterText = document.getElementById('counter-text');
       const progressBar = document.getElementById('progress-bar');
+      const heroVideo = document.getElementById('hero-video');
 
-      if (preloader && counterText && progressBar) {
+      if (preloader && counterText && progressBar && heroVideo) {
         const loaderSeen = sessionStorage.getItem('homeLoaderSeen');
+
         if (loaderSeen === 'true') {
           preloader.remove();
           document.body.classList.remove('overflow-hidden');
@@ -3341,6 +3343,24 @@
               progressBar.style.width = '100%';
               sessionStorage.setItem('homeLoaderSeen', 'true');
 
+              // Wait until the video is buffered enough to play smoothly before fading the loader out
+              heroVideo.addEventListener('canplaythrough', hideLoaderEvent);
+
+              // Fail-safe: if video asset is already fully ready or cached
+              if (heroVideo.readyState >= 3) {
+                hideLoaderEvent();
+              }
+
+              // Absolute fail-safe: dismiss preloader after 4 seconds anyway to avoid freezing the UI on bad network states
+              setTimeout(hideLoaderEvent, 4000);
+            } else {
+              counterText.innerText = Math.floor(count) + '%';
+              progressBar.style.width = count + '%';
+            }
+          }, intervalTime);
+
+          function hideLoaderEvent() {
+            heroVideo.play().then(() => {
               setTimeout(() => {
                 preloader.style.opacity = '0';
                 preloader.style.pointerEvents = 'none';
@@ -3348,12 +3368,17 @@
                   preloader.remove();
                   document.body.classList.remove('overflow-hidden');
                 }, 1200);
-              }, 50);
-              return;
-            }
-            counterText.innerText = Math.floor(count) + '%';
-            progressBar.style.width = count + '%';
-          }, intervalTime);
+              }, 150);
+            }).catch(err => {
+              // If fully blocked by hard browser policy flags, dismiss loader anyway so the page is still accessible
+              preloader.style.opacity = '0';
+              preloader.style.pointerEvents = 'none';
+              setTimeout(() => {
+                preloader.remove();
+                document.body.classList.remove('overflow-hidden');
+              }, 1200);
+            });
+          }
         }
       }
 
