@@ -2734,6 +2734,27 @@
     document.addEventListener('DOMContentLoaded', () => {
       AOS.init({ duration: 1000, once: true });
 
+      // ⚡ ELFSIGHT GLOBE TO FAVICON REPLACEMENT LOGIC
+      const replaceGlobeWithFavicon = () => {
+        const globeIcons = document.querySelectorAll('.elfsight-app-18fed60e-552b-4300-94fd-fadde9652602 svg');
+        globeIcons.forEach(svg => {
+          // Check if this SVG is indeed the globe icon by checking its path or container
+          if (svg && !svg.classList.contains('favicon-replaced')) {
+            const img = document.createElement('img');
+            img.src = 'images/favicon.png';
+            img.className = 'w-4 h-4 rounded-full object-contain favicon-replaced';
+            img.style.width = '16px';
+            img.style.height = '16px';
+            svg.parentNode.replaceChild(img, svg);
+          }
+        });
+      };
+
+      // Run immediately and setup an interval since Elfsight loads asynchronously
+      const faviconInterval = setInterval(replaceGlobeWithFavicon, 500);
+      // Clear interval after 8 seconds to prevent endless looping
+      setTimeout(() => clearInterval(faviconInterval), 8000);
+
       // LEGAL MODAL TRIGGER LOGIC
       const legalModal = document.getElementById('legal-modal');
       const legalModalContent = document.getElementById('legal-modal-content');
