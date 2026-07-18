@@ -3331,9 +3331,8 @@
       const preloader = document.getElementById('preloader');
       const counterText = document.getElementById('counter-text');
       const progressBar = document.getElementById('progress-bar');
-      const heroVideo = document.getElementById('hero-video');
 
-      if (preloader && counterText && progressBar && heroVideo) {
+      if (preloader && counterText && progressBar) {
         const loaderSeen = sessionStorage.getItem('homeLoaderSeen');
         if (loaderSeen === 'true') {
           preloader.remove();
@@ -3352,20 +3351,6 @@
               progressBar.style.width = '100%';
               sessionStorage.setItem('homeLoaderSeen', 'true');
 
-              // Crucial: Wait until the video is fully buffered and ready to play before hiding preloader
-              heroVideo.addEventListener('canplaythrough', hideLoaderEvent);
-              // Failsafe: if already cached or loaded
-              if (heroVideo.readyState >= 3) {
-                hideLoaderEvent();
-              }
-            } else {
-              counterText.innerText = Math.floor(count) + '%';
-              progressBar.style.width = count + '%';
-            }
-          }, intervalTime);
-
-          function hideLoaderEvent() {
-            heroVideo.play().then(() => {
               setTimeout(() => {
                 preloader.style.opacity = '0';
                 preloader.style.pointerEvents = 'none';
@@ -3373,14 +3358,12 @@
                   preloader.remove();
                   document.body.classList.remove('overflow-hidden');
                 }, 1200);
-              }, 100);
-            }).catch(err => {
-              // If blocked by browser, dismiss loader anyway so site doesn't freeze
-              preloader.style.opacity = '0';
-              preloader.style.pointerEvents = 'none';
-              setTimeout(() => { preloader.remove(); document.body.classList.remove('overflow-hidden'); }, 1200);
-            });
-          }
+              }, 50);
+              return;
+            }
+            counterText.innerText = Math.floor(count) + '%';
+            progressBar.style.width = count + '%';
+          }, intervalTime);
         }
       }
 
