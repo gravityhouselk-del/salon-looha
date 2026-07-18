@@ -2664,7 +2664,7 @@
   <div id="lightbox" class="lightbox">
     <span class="close-btn" onclick="closeLightbox()">&times;</span>
     <button id="prev-btn" class="nav-btn" style="left: 20px;">❮</button>
-    <img width="1200" height="800" loading="lazy" id="lightbox-img" class="lightbox-img" src="" alt="Full View">
+    <img width="1200" height="800" loading="lazy" decoding="async" id="lightbox-img" class="lightbox-img" src="" alt="Full View">
     <button id="next-btn" class="nav-btn" style="right: 20px;">❯</button>
   </div>
 
@@ -3309,7 +3309,7 @@
 
       if (preloader && counterText && progressBar) {
         const loaderSeen = sessionStorage.getItem('homeLoaderSeen');
-        
+
         if (loaderSeen === 'true') {
           preloader.remove();
           document.body.classList.remove('overflow-hidden');
@@ -3340,11 +3340,11 @@
             if (heroVideo) {
               heroVideo.play().catch(err => console.log("Autoplay context handled safely."));
             }
-            
+
             // Fade out animation
             preloader.style.opacity = '0';
             preloader.style.pointerEvents = 'none';
-            
+
             setTimeout(() => {
               preloader.remove();
               document.body.classList.remove('overflow-hidden');
