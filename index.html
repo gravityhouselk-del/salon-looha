@@ -1,0 +1,3603 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="preload" href="Hero-Video/hero-video.mp4" as="video" type="video/mp4" fetchpriority="high">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <title>Salon Looha - Luxury Beauty & Aesthetics</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    #preloader {
+      display: none !important;
+    }
+  </style>
+  <script>
+    if (sessionStorage.getItem('homeLoaderSeen') !== 'true') {
+      const style = document.createElement('style');
+      style.innerHTML = '#preloader { display: flex !important; }';
+      document.head.appendChild(style);
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link rel="preload" as="image"
+    href="https://lh3.googleusercontent.com/aida-public/AB6AXuDsX4ZuxrK-Gcyx5cPB7RbV2I8FF4RgHm8apLO_VdmpyN9RNMAzwV3jjC4XmV5Wg-4csON9ZIplW9FhDceoeOv5_EBpKZRh9cu_ZlIxRZ4aNWb15yUJ6oL_AggjU8HEeSuYX8ZPchiexKCePkqY93Z3dlTZV0zELwrHGVdxAqB8eQN3-voN2pXuwnu_N-PqYPR4936TyrQ19tbGFhvGVxVGeFUF-U7q1uNhl4nMi6s25YBIsMDq4lvUBfcYsgfWxskZZ1Po6jxAVZBJ">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap"
+    rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#1a1c1a",
+            "on-primary-fixed-variant": "#3f4b2f",
+            "inverse-on-surface": "#f1f1ed",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#dde6ce",
+            "on-primary": "#ffffff",
+            "primary": "#566345",
+            "secondary": "#59614e",
+            "on-tertiary-fixed-variant": "#3f4b2f",
+            "on-background": "#1a1c1a",
+            "tertiary": "#566345",
+            "background": "#faf9f5",
+            "primary-fixed-dim": "#bdcca8",
+            "tertiary-fixed": "#d9e8c2",
+            "surface": "#faf9f5",
+            "on-tertiary-container": "#3f4b30",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#414938",
+            "primary-container": "#adbb98",
+            "on-primary-container": "#3f4b30",
+            "on-error-container": "#93000a",
+            "surface-container-highest": "#e2e3df",
+            "surface-container-low": "#f4f4f0",
+            "surface-dim": "#dadad6",
+            "inverse-surface": "#2f312e",
+            "surface-tint": "#566345",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-container": "#5f6754",
+            "surface-container-high": "#e8e8e4",
+            "surface-container": "#eeeeea",
+            "on-secondary-fixed": "#171e0f",
+            "secondary-fixed-dim": "#c1cab3",
+            "primary-fixed": "#d9e8c2",
+            "inverse-primary": "#bdcca8",
+            "tertiary-container": "#adbb98",
+            "surface-variant": "#e2e3df",
+            "surface-bright": "#faf9f5",
+            "on-surface-variant": "#45483f",
+            "secondary-fixed": "#dde6ce",
+            "outline-variant": "#c6c8bc",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#141f08",
+            "tertiary-fixed-dim": "#bdcca8",
+            "outline": "#76786e",
+            "on-tertiary-fixed": "#141f08",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Playfair Display", "serif"],
+            "display": ["Playfair Display", "serif"],
+            "body": ["Montserrat", "sans-serif"],
+            "label": ["Montserrat", "sans-serif"]
+          }
+        },
+      }
+    }
+  </script>
+  <style>
+    html {
+      scrollbar-gutter: stable;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    #booking-modal,
+    #popup-gallery,
+    #services-explorer-modal,
+    #destination-modal {
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    #booking-modal-content,
+    #popup-gallery-content,
+    #destination-modal-content {
+      transition: transform 0.4s ease, max-width 0.4s ease;
+    }
+
+    .bw-hover {
+      transition: filter 0.5s ease;
+      filter: grayscale(0%);
+    }
+
+    .bw-hover:hover {
+      filter: grayscale(100%);
+    }
+
+    .bw-to-color {
+      transition: filter 0.5s ease;
+      filter: grayscale(100%);
+    }
+
+    .bw-to-color:hover {
+      filter: grayscale(0%);
+    }
+
+    @keyframes white-pulse-glow {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
+
+    .hero-white-glow-btn {
+      animation: white-pulse-glow 2.5s infinite ease-in-out;
+    }
+
+    @keyframes map-green-pulse {
+      0% {
+        box-shadow: 0 5px 15px 0 rgba(173, 187, 152, 0.6);
+      }
+
+      50% {
+        box-shadow: 0 10px 35px 10px rgba(173, 187, 152, 0.95);
+      }
+
+      100% {
+        box-shadow: 0 5px 15px 0 rgba(173, 187, 152, 0.6);
+      }
+    }
+
+    .map-pulse-glow {
+      animation: map-green-pulse 3s infinite ease-in-out;
+    }
+
+    .fade-transition {
+      opacity: 0;
+      transition: opacity 0.25s ease-out;
+    }
+
+    .fade-in {
+      opacity: 1 !important;
+    }
+
+    .fade-out {
+      opacity: 0 !important;
+    }
+
+    .luxury-float-header {
+      display: inline-block;
+      animation: headerHorizontalDrift 8s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    @keyframes headerHorizontalDrift {
+
+      0%,
+      100% {
+        transform: translateX(0px);
+      }
+
+      50% {
+        transform: translateX(12px);
+      }
+    }
+
+    @keyframes luxurySplitLeft {
+
+      0%,
+      100% {
+        transform: translateX(0px);
+      }
+
+      50% {
+        transform: translateX(-8px);
+      }
+    }
+
+    @keyframes luxurySplitRight {
+
+      0%,
+      100% {
+        transform: translateX(0px);
+      }
+
+      50% {
+        transform: translateX(8px);
+      }
+    }
+
+    #services-section .luxury-float-header {
+      animation-duration: 7.5s;
+    }
+
+    #experts .luxury-float-header {
+      animation-duration: 9s;
+    }
+
+    #reviews .luxury-float-header {
+      animation-duration: 8s;
+    }
+
+    #about-section .luxury-float-header {
+      animation-duration: 8.5s;
+    }
+
+    .popup-item {
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .popup-item.hidden-popup-item {
+      display: none !important;
+      opacity: 0;
+      transform: scale(0.9);
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .main-tab-btn.active-tab,
+    .filter-btn.active-tab {
+      background-color: #adbb98;
+      color: white;
+      border-color: #adbb98;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.98);
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      visibility: visible;
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 1rem;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      color: white;
+      cursor: pointer;
+      padding: 20px;
+      z-index: 10001;
+      background: transparent;
+      border: none;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 3rem;
+      color: white;
+      cursor: pointer;
+      z-index: 10001;
+    }
+  </style>
+</head>
+
+<body id="top"
+  class="bg-white text-[#1a1c1a] font-body antialiased selection:bg-[#adbb98] selection:text-white overflow-x-hidden fade-transition">
+
+  <div id="preloader"
+    class="fixed inset-0 z-[200] bg-[#aeb996] flex flex-col items-center justify-center transition-opacity duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)]">
+    <img width="160" height="160" loading="eager" fetchpriority="high"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsX4ZuxrK-Gcyx5cPB7RbV2I8FF4RgHm8apLO_VdmpyN9RNMAzwV3jjC4XmV5Wg-4csON9ZIplW9FhDceoeOv5_EBpKZRh9cu_ZlIxRZ4aNWb15yUJ6oL_AggjU8HEeSuYX8ZPchiexKCePkqY93Z3dlTZV0zELwrHGVdxAqB8eQN3-voN2pXuwnu_N-PqYPR4936TyrQ19tbGFhvGVxVGeFUF-U7q1uNhl4nMi6s25YBIsMDq4lvUBfcYsgfWxskZZ1Po6jxAVZBJ"
+      alt="Salon Looha Logo" class="w-32 md:w-40 h-auto object-contain mix-blend-multiply mb-8 opacity-90">
+    <div class="flex flex-col items-center gap-4 w-48 md:w-64">
+      <div class="w-full h-[1px] bg-[#1a1c1a]/20 rounded-full overflow-hidden relative">
+        <div id="progress-bar"
+          class="absolute top-0 left-0 bottom-0 bg-[#1a1c1a] w-0 transition-all duration-[75ms] ease-linear"></div>
+      </div>
+      <div id="counter-text" class="font-label text-xs md:text-sm uppercase tracking-[0.2em] font-bold text-[#1a1c1a]">
+        0%</div>
+    </div>
+  </div>
+
+  <main class="relative z-10 w-auto m-[20px] rounded-[32px] overflow-hidden bg-[#faf9f5]">
+
+    <!-- Fixed/Sticky Elegant Luxury Navbar -->
+    <div id="nav-wrapper"
+      class="fixed top-16 left-6 right-6 z-[100] flex flex-col items-center w-[calc(100%-48px)] pointer-events-none transition-all duration-500">
+      <nav id="floating-navbar"
+        class="relative z-50 w-full max-w-[1280px] bg-white/70 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-4 sm:px-6 lg:px-10 py-3 sm:py-4 flex flex-wrap sm:flex-nowrap justify-between items-center border border-black/5 transition-all duration-500 pointer-events-auto">
+        <a id="nav-logo" href="index.html"
+          class="font-headline text-xl sm:text-2xl font-bold text-[#1a1c1a] tracking-wider uppercase transition-all duration-500">
+          SALON LOOHA
+        </a>
+        <div class="hidden lg:flex gap-10 items-center">
+          <a class="nav-link text-[#1a1c1a] border-b-[2px] border-[#adbb98] pb-0.5 font-label text-xs uppercase font-bold tracking-[0.15em] transition-all duration-500"
+            href="index.html">Home</a>
+          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-all duration-500 font-label text-xs uppercase font-bold tracking-[0.15em]"
+            href="#services-section">Services</a>
+          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-all duration-500 font-label text-xs uppercase font-bold tracking-[0.15em]"
+            href="#experts">Experts</a>
+          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-all duration-500 font-label text-xs uppercase font-bold tracking-[0.15em]"
+            href="#reviews">Reviews</a>
+          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-all duration-500 font-label text-xs uppercase font-bold tracking-[0.15em]"
+            href="#gallery-section">Gallery</a>
+          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-all duration-500 font-label text-xs uppercase font-bold tracking-[0.15em]"
+            href="about.html#dimalka">About</a>
+        </div>
+        <div class="flex items-center gap-3 sm:gap-6">
+          <button id="open-booking-btn-nav"
+            class="bg-[#adbb98] text-white hover:bg-[#9cae86] transition-all duration-500 px-4 py-2 sm:px-8 sm:py-3 rounded-full font-label text-[10px] sm:text-xs font-bold tracking-[0.15em] uppercase shadow-md hover:-translate-y-0.5 inline-block cursor-pointer">
+            Book Appointment
+          </button>
+          <button id="mobile-menu-btn"
+            class="lg:hidden text-[#1a1c1a] transition-colors duration-500 flex items-center justify-center">
+            <span class="material-symbols-outlined text-2xl sm:text-3xl">menu</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Dropdown Drawer -->
+      <div id="mobile-menu"
+        class="relative z-40 hidden opacity-0 -translate-y-4 w-full max-w-[1280px] bg-white/95 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.1)] mt-2 border border-black/5 flex-col p-6 gap-6 pointer-events-auto transition-all duration-300 lg:hidden text-center">
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+          href="index.html">Home</a>
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+          href="#services-section">Services</a>
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+          href="#experts">Experts</a>
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+          href="#reviews">Reviews</a>
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+          href="#gallery-section">Gallery</a>
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+          href="about.html#dimalka">About</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="relative w-full h-screen overflow-hidden bg-[#faf9f5]" style="width: 100%; height: 100vh;">
+      <div class="absolute inset-0 overflow-hidden z-0 bg-[#1a1c1a]" style="width: 100%; height: 100%;">
+        <video autoplay loop muted playsinline preload="auto" fetchpriority="high"
+          class="w-full h-full object-cover pointer-events-none bg-transparent" id="hero-video">
+          <source src="Hero-Video/hero-video.mp4" type="video/mp4">
+        </video>
+        <script>
+          window.addEventListener('DOMContentLoaded', () => {
+            const v = document.getElementById('hero-video');
+            if (v) {
+              v.muted = true;
+              v.setAttribute('muted', '');
+              v.setAttribute('playsinline', '');
+              v.play().catch(err => console.log("Autoplay deferred"));
+            }
+          });
+        </script>
+      </div>
+      <div class="absolute inset-0 z-10 flex flex-col justify-center items-center text-center px-6"
+        data-nav-theme="dark" style="width: 100%; height: 100%;">
+        <div class="max-w-4xl mx-auto flex flex-col gap-10 items-center justify-end h-full pb-20 md:pb-28">
+          <button id="open-booking-btn-hero"
+            class="border-2 border-white hero-white-glow-btn px-12 py-5 text-sm md:text-base tracking-[0.2em] bg-[#adbb98] text-white rounded-full hover:bg-[#9cae86] transition-all shadow-xl hover:-translate-y-1 cursor-pointer font-bold font-label uppercase flex items-center justify-center">
+            Plan Your Destination Wedding
+          </button>
+          <a href="#services-section"
+            class="flex items-center justify-center w-14 h-14 rounded-full border-2 border-white/40 bg-white/5 text-white backdrop-blur-md shadow-2xl animate-bounce hover:bg-white hover:text-[#1a1c1a] hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer group">
+            <span
+              class="material-symbols-outlined text-2xl font-light transition-transform group-hover:translate-y-0.5">arrow_downward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services-section" class="bg-white py-24 lg:py-32" data-nav-theme="light"
+      style="scroll-margin-top: 140px;">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-24">
+        <div class="max-w-3xl mx-auto pt-8 md:pt-12 mb-16 text-center flex flex-col items-center justify-center"
+          data-aos="fade-up">
+          <h2
+            class="luxury-float-header font-headline text-3xl lg:text-4xl font-bold text-[#1a1c1a] tracking-tight mb-6">
+            Our Signature Services
+          </h2>
+          <button
+            class="open-services-explorer px-8 py-3.5 rounded-full border-2 border-[#adbb98] text-[#adbb98] font-label text-xs uppercase font-bold tracking-[0.15em] transition-all duration-300 cursor-pointer flex items-center gap-2 relative overflow-hidden bg-transparent group shadow-sm hover:text-white hover:border-[#adbb98] before:absolute before:inset-0 before:bg-[#adbb98] before:scale-x-0 before:origin-right before:transition-transform before:duration-500 hover:before:scale-x-100 hover:before:origin-left before:z-0 map-pulse-glow">
+            <span class="relative z-10 flex items-center gap-2">
+              Explore All Services <span
+                class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180 duration-500">menu_book</span>
+            </span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4">
+          <!-- Card 1 -->
+          <div
+            class="service-explore-btn group bg-transparent rounded-2xl overflow-hidden border-2 border-[#adbb98] hover:bg-[#adbb98]/5 hover:shadow-[0_10px_30px_rgba(173,187,152,0.4)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-pointer"
+            data-service-index="0">
+            <div class="h-48 overflow-hidden flex-shrink-0">
+              <img width="400" height="550" loading="lazy" decoding="async"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="images/haircut.jpg" alt="Master Haircut">
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between">
+              <div>
+                <h3 class="font-headline text-xl font-semibold text-[#1a1c1a] mb-2">Master Haircut</h3>
+                <p class="font-body text-sm text-[#1a1c1a]/80 leading-relaxed mb-4">Precision cuts, bespoke coloring,
+                  and restorative treatments customized to your hair's architecture.</p>
+              </div>
+              <div class="pt-4 border-t border-black/5 mt-auto">
+                <button
+                  class="open-services-explorer text-[11px] tracking-[0.15em] uppercase font-bold text-[#1a1c1a]/60 hover:text-[#adbb98] transition-colors cursor-pointer flex items-center gap-1 w-full text-left"
+                  data-tab-index="0">
+                  Explore Category Menu <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="service-explore-btn group bg-transparent rounded-2xl overflow-hidden border-2 border-[#adbb98] hover:bg-[#adbb98]/5 hover:shadow-[0_10px_30px_rgba(173,187,152,0.4)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-pointer"
+            data-service-index="1">
+            <div class="h-48 overflow-hidden flex-shrink-0">
+              <img width="400" height="550" loading="lazy" decoding="async"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="images/bridal.jpg" alt="Bridal & Grooming">
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between">
+              <div>
+                <h3 class="font-headline text-xl font-semibold text-[#1a1c1a] mb-2">Bridal & Grooming</h3>
+                <p class="font-body text-sm text-[#1a1c1a]/80 leading-relaxed mb-4">Elegant bridal transformations and
+                  premium men's grooming journeys ensuring you look flawlessly sharp.</p>
+              </div>
+              <div class="pt-4 border-t border-black/5 mt-auto">
+                <button
+                  class="open-services-explorer text-[11px] tracking-[0.15em] uppercase font-bold text-[#1a1c1a]/60 hover:text-[#adbb98] transition-colors cursor-pointer flex items-center gap-1 w-full text-left"
+                  data-tab-index="2">
+                  Explore Category Menu <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="service-explore-btn group bg-transparent rounded-2xl overflow-hidden border-2 border-[#adbb98] hover:bg-[#adbb98]/5 hover:shadow-[0_10px_30px_rgba(173,187,152,0.4)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-pointer"
+            data-service-index="2">
+            <div class="h-48 overflow-hidden flex-shrink-0">
+              <img width="400" height="550" loading="lazy" decoding="async"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="images/nails.jpg" alt="Nail Artistry">
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between">
+              <div>
+                <h3 class="font-headline text-xl font-semibold text-[#1a1c1a] mb-2">Nail Artistry</h3>
+                <p class="font-body text-sm text-[#1a1c1a]/80 leading-relaxed mb-4">Luxury manicures, custom gel
+                  extensions, and intricate nail art designed to complement your personal style.</p>
+              </div>
+              <div class="pt-4 border-t border-black/5 mt-auto">
+                <button
+                  class="open-services-explorer text-[11px] tracking-[0.15em] uppercase font-bold text-[#1a1c1a]/60 hover:text-[#adbb98] transition-colors cursor-pointer flex items-center gap-1 w-full text-left"
+                  data-tab-index="1">
+                  Explore Category Menu <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="service-explore-btn group bg-transparent rounded-2xl overflow-hidden border-2 border-[#adbb98] hover:bg-[#adbb98]/5 hover:shadow-[0_10px_30px_rgba(173,187,152,0.4)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-pointer"
+            data-service-index="3">
+            <div class="h-48 overflow-hidden flex-shrink-0">
+              <img width="400" height="550" loading="lazy" decoding="async"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="images/transformation.jpg" alt="Complete Transformation">
+            </div>
+            <div class="p-6 flex flex-col flex-grow justify-between">
+              <div>
+                <h3 class="font-headline text-xl font-semibold text-[#1a1c1a] mb-2">Complete Transformation</h3>
+                <p class="font-body text-sm text-[#1a1c1a]/80 leading-relaxed mb-4">A curated, full-day VIP pampering
+                  and makeover experience resulting in a dramatic restyling.</p>
+              </div>
+              <div class="pt-4 border-t border-black/5 mt-auto">
+                <button
+                  class="open-services-explorer text-[11px] tracking-[0.15em] uppercase font-bold text-[#1a1c1a]/60 hover:text-[#adbb98] transition-colors cursor-pointer flex items-center gap-1 w-full text-left"
+                  data-tab-index="3">
+                  Explore Category Menu <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experts -->
+    <section id="experts" class="py-16 md:py-24 pb-24 md:pb-32 bg-white w-full" style="scroll-margin-top: 140px;">
+      <div class="max-w-3xl mx-auto pt-8 md:pt-12 mb-16 text-center flex flex-col items-center justify-center">
+        <h2 class="luxury-float-header font-display text-4xl font-bold mb-12">Meet Our Experts</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div
+            class="p-8 border rounded-3xl shadow-sm hover:shadow-[0_10px_30px_rgba(173,187,152,0.85)] hover:-translate-y-1 transition-all duration-300 bg-white">
+            <img width="96" height="96" loading="lazy" decoding="async" src="profile-photos/dimalka.jpeg"
+              class="w-24 h-24 rounded-full mx-auto object-cover mb-4">
+            <h3 class="text-xl font-bold">Dimalka Nuwanthi</h3>
+            <p class="text-xs text-[#adbb98] font-bold uppercase tracking-widest mb-4">Founder & Master Stylist</p>
+            <p class="text-gray-600 text-sm mb-6">Expert in bridal transformations and advanced nail care with over a
+              decade of experience.</p>
+            <a href="about.html#dimalka"
+              class="inline-block border border-black px-6 py-2 rounded-full text-xs font-bold uppercase hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300">View
+              Profile</a>
+          </div>
+          <div
+            class="p-8 border rounded-3xl shadow-sm hover:shadow-[0_10px_30px_rgba(173,187,152,0.85)] hover:-translate-y-1 transition-all duration-300 bg-white">
+            <img width="96" height="96" loading="lazy" decoding="async" src="profile-photos/sadee.jpeg"
+              class="w-24 h-24 rounded-full mx-auto object-cover mb-4">
+            <h3 class="text-xl font-bold">Sadee Subandriyo</h3>
+            <p class="text-xs text-[#adbb98] font-bold uppercase tracking-widest mb-4">Ladies Hair Specialist</p>
+            <p class="text-gray-600 text-sm mb-6">Specializing in stunning, modern hair aesthetics and advanced cutting
+              techniques.</p>
+            <a href="about.html#sadee"
+              class="inline-block border border-black px-6 py-2 rounded-full text-xs font-bold uppercase hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300">View
+              Profile</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="bg-[#adbb98] text-white py-24 lg:py-32" data-nav-theme="dark"
+      style="scroll-margin-top: 140px;">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-24">
+        <div class="max-w-3xl mx-auto pt-8 md:pt-12 mb-16 text-center flex flex-col items-center justify-center">
+          <h2 class="luxury-float-header font-headline text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">
+            What Our Clients Say</h2>
+        </div>
+        <div class="max-w-5xl mx-auto">
+          <div
+            class="w-full min-h-[450px] md:min-h-[520px] flex items-center justify-center transition-all duration-300">
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div class="elfsight-app-18fed60e-552b-4300-94fd-fadde9652602" data-elfsight-app-lazy></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery-section" class="bg-white py-24 lg:py-32" data-nav-theme="light"
+      style="scroll-margin-top: 140px;">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-24">
+        <div class="max-w-3xl mx-auto pt-8 md:pt-12 mb-16 text-center flex flex-col items-center justify-center">
+          <span class="material-symbols-outlined text-4xl text-[#1a1c1a] mb-4">photo_camera</span>
+          <h2
+            class="luxury-float-header font-headline text-3xl lg:text-4xl font-bold text-[#1a1c1a] mb-4 tracking-tight">
+            The Looha Lookbook</h2>
+          <a class="font-label text-sm uppercase tracking-widest text-[#1a1c1a] hover:opacity-70 transition-colors border-b border-[#1a1c1a] pb-1"
+            href="#">@SalonLooha</a>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-12 mt-6">
+          <button
+            class="main-tab-btn active-tab px-6 py-2 rounded-full border-2 border-[#adbb98] text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer"
+            data-target="bridal">Bridal Shoot</button>
+          <button
+            class="main-tab-btn px-6 py-2 rounded-full border-2 border-black/10 text-xs font-bold uppercase tracking-wider hover:border-[#adbb98] transition-all duration-300 cursor-pointer"
+            data-target="party">Party Styling</button>
+          <button
+            class="main-tab-btn px-6 py-2 rounded-full border-2 border-black/10 text-xs font-bold uppercase tracking-wider hover:border-[#adbb98] transition-all duration-300 cursor-pointer"
+            data-target="nails">Nail Artistry</button>
+          <button
+            class="main-tab-btn px-6 py-2 rounded-full border-2 border-black/10 text-xs font-bold uppercase tracking-wider hover:border-[#adbb98] transition-all duration-300 cursor-pointer"
+            data-target="hair">Hair Aesthetics</button>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 md:px-0">
+          <div class="aspect-square rounded-xl overflow-hidden group bw-to-color"><img width="800" height="800"
+              loading="lazy" decoding="async" id="preview-img-1"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              src="lookbook/bridal/bridal-1.webp"></div>
+          <div class="aspect-square rounded-xl overflow-hidden group bw-to-color"><img width="800" height="800"
+              loading="lazy" decoding="async" id="preview-img-2"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              src="lookbook/bridal/bridal-2.webp"></div>
+          <div class="aspect-square rounded-xl overflow-hidden group bw-to-color"><img width="800" height="800"
+              loading="lazy" decoding="async" id="preview-img-3"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              src="lookbook/bridal/bridal-3.webp"></div>
+          <div onclick="openGalleryPopup()"
+            class="aspect-square rounded-xl overflow-hidden group relative cursor-pointer">
+            <img width="800" height="800" loading="lazy" decoding="async" id="preview-img-4"
+              class="w-full h-full object-cover group-hover:scale-110 grayscale group-hover:grayscale-0 transition-all duration-700"
+              src="lookbook/bridal/bridal-4.webp">
+            <div
+              class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex flex-col items-center justify-center text-white p-4">
+              <span class="material-symbols-outlined text-4xl animate-bounce mb-2">arrow_forward</span>
+              <p class="font-label text-xs uppercase font-bold tracking-[0.2em]">View Lookbook</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Looha Reels Section -->
+    <section id="reels-section" class="pt-2 pb-16 bg-white w-full" data-nav-theme="light"
+      style="scroll-margin-top: 140px;">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-24">
+        <div class="text-center pt-0 mb-10 select-none">
+          <span class="font-label text-xs uppercase tracking-[0.2em] text-[#adbb98] font-bold block mb-3">Reels
+            Showcase</span>
+          <h2
+            class="font-headline text-4xl md:text-5xl font-light text-[#1a1c1a] tracking-wide inline-flex overflow-hidden cursor-default py-2">
+            <span class="inline-block animate-[luxurySplitLeft_6s_ease-in-out_infinite]">Looha&nbsp;</span>
+            <span class="text-[#adbb98] inline-block animate-[luxurySplitRight_6s_infinite]">in Motion</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 lg:gap-6">
+          <div
+            class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black/5 border border-black/5 group cursor-pointer shadow-sm">
+            <video
+              class="reel-player w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
+              loop muted playsinline preload="metadata">
+              <source src="lookbook/reels/reel-1.mp4" type="video/mp4">
+            </video>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 transition-opacity flex items-end p-4 pointer-events-none">
+              <span
+                class="material-symbols-outlined text-white text-2xl group-hover:scale-110 transition-transform">play_circle</span>
+            </div>
+          </div>
+          <div
+            class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black/5 border border-black/5 group cursor-pointer shadow-sm">
+            <video
+              class="reel-player w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
+              loop muted playsinline preload="metadata">
+              <source src="lookbook/reels/reel-2.mp4" type="video/mp4">
+            </video>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 transition-opacity flex items-end p-4 pointer-events-none">
+              <span
+                class="material-symbols-outlined text-white text-2xl group-hover:scale-110 transition-transform">play_circle</span>
+            </div>
+          </div>
+          <div
+            class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black/5 border border-black/5 group cursor-pointer shadow-sm">
+            <video
+              class="reel-player w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
+              loop muted playsinline preload="metadata">
+              <source src="lookbook/reels/reel-3.mp4" type="video/mp4">
+            </video>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 transition-opacity flex items-end p-4 pointer-events-none">
+              <span
+                class="material-symbols-outlined text-white text-2xl group-hover:scale-110 transition-transform">play_circle</span>
+            </div>
+          </div>
+          <div
+            class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black/5 border border-black/5 group cursor-pointer shadow-sm">
+            <video
+              class="reel-player w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
+              loop muted playsinline preload="metadata">
+              <source src="lookbook/reels/reel-4.mp4" type="video/mp4">
+            </video>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 transition-opacity flex items-end p-4 pointer-events-none">
+              <span
+                class="material-symbols-outlined text-white text-2xl group-hover:scale-110 transition-transform">play_circle</span>
+            </div>
+          </div>
+          <div
+            class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black/5 border border-black/5 group cursor-pointer shadow-sm">
+            <video
+              class="reel-player w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
+              loop muted playsinline preload="metadata">
+              <source src="lookbook/reels/reel-5.mp4" type="video/mp4">
+            </video>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 transition-opacity flex items-end p-4 pointer-events-none">
+              <span
+                class="material-symbols-outlined text-white text-2xl group-hover:scale-110 transition-transform">play_circle</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center mt-12">
+          <a href="https://web.facebook.com/SalonLooha/reels/" target="_blank"
+            class="px-8 py-4 rounded-full border-2 border-[#1a1c1a] bg-transparent hover:bg-[#1a1c1a] hover:text-white text-[#1a1c1a] font-label text-xs uppercase font-bold tracking-[0.15em] transition-all duration-300 cursor-pointer flex items-center gap-3 shadow-sm hover:shadow-md">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+            Watch More Reels on Facebook
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit Our Sanctuary Section -->
+    <section id="about-section" class="bg-white py-24 lg:py-32 border-t border-on-surface/10" data-nav-theme="light"
+      style="scroll-margin-top: 140px;">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="flex flex-col gap-8 pt-8 md:pt-12">
+          <h2 class="luxury-float-header font-headline text-3xl lg:text-4xl font-bold text-[#1a1c1a] tracking-tight">
+            Visit Our Sanctuary</h2>
+          <div class="flex flex-col gap-6">
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-[#adbb98] mt-1">location_on</span>
+              <div>
+                <p class="font-body text-lg text-[#1a1c1a]">Ave Maria Rd, Negombo 11410</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-[#adbb98]">schedule</span>
+              <p class="font-body text-lg text-[#1a1c1a]">Monday – Sunday, 8.30am – 6.30pm</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 mt-6">
+            <span class="material-symbols-outlined text-[#adbb98]">call</span>
+            <a href="tel:0776201254"
+              class="font-body text-base text-[#1a1c1a]/80 hover:text-[#adbb98] font-semibold transition-colors">077 620
+              1254</a>
+          </div>
+          <div class="pt-4">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Salon+Looha+Negombo&destination_place_id=ChIJ-Y-95bd0e8830467"
+              target="_blank"
+              class="inline-block bg-white text-[#adbb98] border-2 border-[#adbb98] hover:bg-[#adbb98] hover:text-white transition-all px-8 py-4 rounded-full font-label text-base font-semibold tracking-wide uppercase text-center cursor-pointer">GET
+              DIRECTIONS</a>
+          </div>
+        </div>
+        <div
+          class="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden border border-on-surface/5 map-pulse-glow">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.298188188157!2d79.84045737499645!3d7.212451615655447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2ef01549acaad%3A0x60995bd0e8830467!2sSalon%20looha!5e0!3m2!1sen!2slk!4v1720630650942!5m2!1sen!2slk"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer class="bg-[#adbb98] text-white w-full pt-24 pb-8 border-t border-white/20" data-nav-theme="dark">
+      <div
+        class="max-w-[1200px] mx-auto px-6 lg:px-24 w-full flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
+        <div class="max-w-sm">
+          <a class="block mb-6" href="#top">
+            <img width="160" height="96" loading="lazy" decoding="async"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsX4ZuxrK-Gcyx5cPB7RbV2I8FF4RgHm8apLO_VdmpyN9RNMAzwV3jjC4XmV5Wg-4csON9ZIplW9FhDceoeOv5_EBpKZRh9cu_ZlIxRZ4aNWb15yUJ6oL_AggjU8HEeSuYX8ZPchiexKCePkqY93Z3dlTZV0zELwrHGVdxAqB8eQN3-voN2pXuwnu_N-PqYPR4936TyrQ19tbGFhvGVxVGeFUF-U7q1uNhl4nMi6s25YBIsMDq4lvUBfcYsgfWxskZZ1Po6jxAVZBJ"
+              alt="Salon Looha Logo" class="h-24 w-auto object-contain">
+          </a>
+          <p class="font-body text-white/80 text-sm leading-relaxed mb-6">A sanctuary of style and rejuvenation.
+            Redefining modern luxury through organic practices and unparalleled expertise.</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-12 w-full md:w-auto">
+          <div class="flex flex-col gap-4">
+            <h5 class="font-label text-xs uppercase tracking-widest text-white/60 mb-2">Explore</h5>
+            <a class="font-body text-white hover:text-white/70 transition-colors text-sm"
+              href="#services-section">Services</a>
+            <a class="font-body text-white hover:text-white/70 transition-colors text-sm" href="#experts">Our Team</a>
+            <a class="font-body text-white hover:text-white/70 transition-colors text-sm"
+              href="#gallery-section">Gallery</a>
+            <a class="font-body text-white hover:text-white/70 transition-colors text-sm"
+              href="#about-section">Contact</a>
+          </div>
+          <div class="flex flex-col gap-4">
+            <h5 class="font-label text-xs uppercase tracking-widest text-white/60 mb-2">Legal</h5>
+            <a class="legal-trigger font-body text-white hover:text-white/70 transition-colors text-sm cursor-pointer"
+              data-legal="privacy">Privacy Policy</a>
+            <a class="legal-trigger font-body text-white hover:text-white/70 transition-colors text-sm cursor-pointer"
+              data-legal="terms">Terms of Service</a>
+            <a class="legal-trigger font-body text-white hover:text-white/70 transition-colors text-sm cursor-pointer"
+              data-legal="cancel">Cancellation Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="max-w-[1200px] mx-auto px-6 lg:px-24 w-full pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="font-label text-xs text-white/60 uppercase tracking-wider">© 2026 SALON LOOHA. DESIGNED BY GRAVITY
+          HOUSE.</p>
+        <p class="font-label text-xs text-white/60 uppercase tracking-wider">Ave Maria Rd, Negombo 11410</p>
+      </div>
+
+      <div class="flex justify-center pt-10 w-full">
+        <a href="#top"
+          class="flex items-center justify-center w-12 h-12 rounded-full border border-white/40 bg-white/10 text-white hover:bg-white hover:text-[#1a1c1a] transition-all duration-300 animate-bounce cursor-pointer">
+          <span class="material-symbols-outlined text-xl font-bold">arrow_upward</span>
+        </a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Lookbook Gallery Lightbox Panel Layout -->
+  <div id="popup-gallery"
+    class="fixed inset-0 z-[160] bg-black/70 opacity-0 invisible flex items-center justify-center p-4 md:p-10 backdrop-blur-md transition-all duration-400 overflow-hidden">
+    <div id="popup-gallery-content"
+      class="bg-[#faf9f5] w-full max-w-[1280px] h-[90vh] rounded-[2.5rem] shadow-2xl overflow-hidden scale-95 relative flex flex-col p-6 md:p-10 transition-all duration-400">
+      <button id="close-gallery-btn"
+        class="absolute top-6 right-6 w-12 h-12 rounded-full bg-black/5 hover:bg-black/10 transition-colors flex items-center justify-center text-black z-50 cursor-pointer">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="text-center mb-4 flex-shrink-0">
+        <h3 class="font-headline text-2xl md:text-3xl font-bold text-[#1a1c1a]">The Looha Lookbook</h3>
+        <p class="font-body text-xs text-[#1a1c1a]/50 mt-0.5 uppercase tracking-wider">Select a collection to filter
+          curated transformations</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 flex-shrink-0">
+        <button
+          class="filter-btn active-tab px-6 py-2 rounded-full border-2 border-black/10 text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer"
+          data-filter="bridal">Bridal Shoot</button>
+        <button
+          class="filter-btn px-6 py-2 rounded-full border-2 border-black/10 text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer"
+          data-filter="party">Party Styling</button>
+        <button
+          class="filter-btn px-6 py-2 rounded-full border-2 border-black/10 text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer"
+          data-filter="nails">Nail Artistry</button>
+        <button
+          class="filter-btn px-6 py-2 rounded-full border-2 border-black/10 text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer"
+          data-filter="hair">Hair Aesthetics</button>
+      </div>
+      <div class="flex-1 overflow-y-auto pr-2 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6" id="popup-grid-wrapper">
+        <!-- Bridal Collection Items Loaded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Sliders & Input Validation Modal Container -->
+  <div id="booking-modal"
+    class="fixed inset-0 z-[150] bg-black/60 opacity-0 invisible flex items-center justify-center p-4 backdrop-blur-md transition-all duration-400">
+    <div id="booking-modal-content"
+      class="bg-[#faf9f5] w-full max-w-[600px] rounded-[2.5rem] shadow-2xl border border-black/5 overflow-hidden scale-95 relative max-h-[90vh] flex flex-col md:flex-row transition-all duration-400">
+      <div id="modal-slider-panel" class="hidden md:w-1/2 relative h-[300px] md:h-auto overflow-hidden bg-black/5">
+        <img width="800" height="600" loading="lazy" decoding="async" id="slider-before-img" src="" alt="Before"
+          class="absolute inset-0 w-full h-full object-cover">
+        <img width="800" height="600" loading="lazy" decoding="async" id="slider-after-img" src="" alt="After"
+          class="absolute inset-0 w-full h-full object-cover" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+        <div id="slider-split-bar" class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 shadow-lg"
+          style="left: 50%;">
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-xl border border-black/10">
+            <span class="material-symbols-outlined text-[#1a1c1a] text-sm select-none">unfold_more</span>
+          </div>
+        </div>
+        <input type="range" id="clip-range-slider" min="0" max="100" value="50"
+          class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30">
+      </div>
+
+      <div class="flex-1 p-8 lg:p-10 overflow-y-auto max-h-[90vh]">
+        <button id="close-booking-btn"
+          class="absolute top-6 right-6 w-10 h-10 rounded-full bg-[#1a1c1a]/5 hover:bg-[#1a1c1a]/10 transition-colors flex items-center justify-center text-[#1a1c1a] z-50 cursor-pointer"><span
+            class="material-symbols-outlined">close</span></button>
+        <div class="text-center mb-6">
+          <h3 class="font-headline text-2xl lg:text-3xl font-bold text-[#1a1c1a] tracking-tight">Book Your Appointment
+          </h3>
+          <p class="font-body text-sm text-[#1a1c1a]/70 mt-1">Choose your preferred method to schedule a session.</p>
+        </div>
+        <div class="mb-6">
+          <!-- Calendly link widget begin -->
+          <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+          <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+          <button
+            class="w-full py-3 px-4 bg-[#566345] hover:bg-[#455037] text-white font-semibold rounded-lg shadow-md transition-all duration-300 flex items-center justify-center gap-2 tracking-wide uppercase text-sm"
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/swankybydimalka/30min'});return false;">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Book via Calendly
+          </button>
+          <!-- Calendly link widget end -->
+          <div class="mt-3 text-center">
+            <a href="#services-section" id="modal-view-menu-btn"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#566345] hover:opacity-70 uppercase tracking-wider transition-all duration-300">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                </path>
+              </svg>
+              View Full Menu
+            </a>
+          </div>
+        </div>
+        <div class="relative flex py-3 items-center">
+          <div class="flex-grow border-t border-black/10"></div>
+          <span class="flex-shrink mx-4 text-[#1a1c1a]/40 font-label text-xs uppercase tracking-widest">Or Chat
+            Instantly</span>
+          <div class="flex-grow border-t border-black/10"></div>
+        </div>
+        <form id="whatsapp-booking-form-modal" class="flex flex-col gap-4 mt-2">
+          <div class="flex flex-col gap-1">
+            <label for="modalClientName"
+              class="font-label text-[11px] uppercase tracking-widest font-bold text-[#1a1c1a]">Client Name</label>
+            <input type="text" id="modalClientName" required
+              class="w-full bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-4 py-2.5 font-body text-sm text-[#1a1c1a] placeholder-[#1a1c1a]/40 outline-none transition-all"
+              placeholder="Your Full Name">
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="modalClientEmail"
+              class="font-label text-[11px] uppercase tracking-widest font-bold text-[#1a1c1a]">Email Address</label>
+            <input type="email" id="modalClientEmail" required
+              class="w-full bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-4 py-2.5 font-body text-sm text-[#1a1c1a] placeholder-[#1a1c1a]/40 outline-none transition-all"
+              placeholder="you@example.com">
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="modalClientPhone"
+              class="font-label text-[11px] uppercase tracking-widest font-bold text-[#1a1c1a]">WhatsApp Number</label>
+            <input type="tel" id="modalClientPhone" required
+              class="w-full bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-4 py-2.5 font-body text-sm text-[#1a1c1a] placeholder-[#1a1c1a]/40 outline-none transition-all"
+              placeholder="e.g. +94 77 123 4567">
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="modalServiceNeeded"
+              class="font-label text-[11px] uppercase tracking-widest font-bold text-[#1a1c1a]">Service Needed</label>
+            <select id="modalServiceNeeded" required
+              class="w-full bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-4 py-2.5 font-body text-sm text-[#1a1c1a] outline-none transition-all appearance-none cursor-pointer">
+              <option value="" disabled selected>Select a service</option>
+              <option value="Hair Artistry">Hair Artistry & Technical Care</option>
+              <option value="Nail Lounge">Nail Lounge & Hand/Foot Spa</option>
+              <option value="Makeup & Glam">Luxury Makeup & Glam</option>
+              <option value="Skin & Waxing">Clinical Skincare & Waxing</option>
+              <option value="Complete Transformation">Complete Transformation (Full Day VIP)</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="modalClientMessage"
+              class="font-label text-[11px] uppercase tracking-widest font-bold text-[#1a1c1a]">Message /
+              Details</label>
+            <textarea id="modalClientMessage" rows="2"
+              class="w-full bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-4 py-2.5 font-body text-sm text-[#1a1c1a] placeholder-[#1a1c1a]/40 outline-none transition-all resize-none"
+              placeholder="Preferred date, time or questions..."></textarea>
+          </div>
+          <button type="submit"
+            class="mt-2 bg-[#25D366] text-white hover:bg-[#20b858] transition-colors duration-500 px-6 py-3.5 rounded-full font-label text-xs font-bold tracking-[0.15em] uppercase shadow-md hover:-translate-y-0.5 flex justify-center items-center gap-2 w-full cursor-pointer">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+            </svg>
+            Send via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESTINATION WEDDING LUXURY INFO MODAL -->
+  <div id="destination-modal"
+    class="fixed inset-0 z-[170] bg-black/70 opacity-0 invisible flex items-center justify-center p-4 backdrop-blur-md transition-all duration-400">
+    <div id="destination-modal-content"
+      class="bg-[#faf9f5] w-full max-w-[650px] rounded-[2.5rem] shadow-2xl border border-black/5 scale-95 relative max-h-[90vh] flex flex-col overflow-hidden transition-all duration-400">
+      <button id="close-destination-btn"
+        class="absolute top-6 right-6 w-10 h-10 rounded-full bg-[#1a1c1a]/5 hover:bg-[#1a1c1a]/10 transition-colors flex items-center justify-center text-[#1a1c1a] z-50 cursor-pointer">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="p-8 lg:p-10 overflow-y-auto">
+        <div class="text-center mb-8">
+          <span class="material-symbols-outlined text-4xl text-[#adbb98] mb-2">flight_takeoff</span>
+          <h3 class="font-headline text-2xl lg:text-3xl font-bold text-[#1a1c1a] tracking-tight">All-Inclusive
+            Destination Weddings</h3>
+          <p class="font-body text-sm text-[#1a1c1a]/60 mt-1">Luxury bridal & groom services executed flawlessly
+            anywhere in the world.</p>
+        </div>
+        <div class="flex flex-col gap-6 mb-6">
+          <div
+            class="flex gap-4 items-start bg-white p-5 rounded-2xl border border-[#D4AF37]/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <span class="material-symbols-outlined text-[#566345] bg-[#566345]/10 p-2.5 rounded-xl">styler</span>
+            <div>
+              <h4 class="font-headline font-bold text-[#1a1c1a]">Complete Bride & Groom Styling</h4>
+              <p class="font-body text-xs text-[#1a1c1a]/70 mt-0.5">Premium wedding attire dressing, luxury styling, and
+                end-to-end management for both bride and groom to look absolute perfection.</p>
+            </div>
+          </div>
+          <div
+            class="flex gap-4 items-start bg-white p-5 rounded-2xl border border-[#D4AF37]/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <span class="material-symbols-outlined text-[#566345] bg-[#566345]/10 p-2.5 rounded-xl">face</span>
+            <div>
+              <h4 class="font-headline font-bold text-[#1a1c1a]">High-End HD & Airbrush Makeup</h4>
+              <p class="font-body text-xs text-[#1a1c1a]/70 mt-0.5">Flawless, long-lasting luxury wedding makeup
+                tailored precisely for international destination weather conditions and high-def cameras.</p>
+            </div>
+          </div>
+          <div
+            class="flex gap-4 items-start bg-white p-5 rounded-2xl border border-[#D4AF37]/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <span class="material-symbols-outlined text-[#566345] bg-[#566345]/10 p-2.5 rounded-xl">photo_camera</span>
+            <div>
+              <h4 class="font-headline font-bold text-[#1a1c1a]">Premium Pre-Wedding & Main Photoshoots</h4>
+              <p class="font-body text-xs text-[#1a1c1a]/70 mt-0.5">Complete high-end cinematic photography and
+                videography coverage capturing your beautiful story at your dream location.</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <a href="https://api.whatsapp.com/send?phone=94776201254&text=Hello%20Salon%20Looha!%20%F0%9F%8C%B8%20I%20just%20read%20about%20your%20All-Inclusive%20Destination%20Wedding%20Packages%20(Dressing%2C%20Makeup%20%26%20Photoshoot).%20I%20would%20love%20to%20get%20more%20details%20and%20pricing%20for%20my%20wedding!"
+            target="_blank"
+            class="bg-[#25D366] text-white hover:bg-[#20b858] transition-all duration-300 px-6 py-4 rounded-full font-label text-xs font-bold tracking-[0.15em] uppercase shadow-md hover:-translate-y-0.5 flex justify-center items-center gap-2 w-full cursor-pointer">
+            Discuss Packages via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE EXPLORER POPUP MENU -->
+  <div id="services-explorer-modal"
+    class="fixed inset-0 z-[200] bg-white/95 backdrop-blur-xl opacity-0 invisible transition-all duration-300 flex flex-col max-h-screen overflow-hidden">
+    <div class="flex items-center justify-between px-8 py-6 border-b border-black/5 flex-shrink-0">
+      <span class="font-headline text-3xl font-extrabold text-[#1a1c1a] tracking-widest">SALON LOOHA MENU</span>
+      <button id="close-explorer-btn"
+        class="w-10 h-10 rounded-full bg-[#1a1c1a]/5 hover:bg-[#1a1c1a]/10 flex items-center justify-center cursor-pointer">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <div class="flex-1 flex flex-col md:flex-row overflow-hidden">
+      <div
+        class="w-full md:w-[320px] bg-[#faf9f5] md:border-r border-b md:border-b-0 border-black/5 flex overflow-x-auto md:overflow-y-auto whitespace-nowrap md:whitespace-normal scrollbar-none md:scrollbar-default gap-2 md:gap-0 px-4 py-2 md:py-6 shrink-0 flex-row md:flex-col"
+        id="explorer-tabs">
+        <button
+          class="tab-btn active w-auto md:w-full px-4 py-2 md:py-3 text-left font-label text-xs sm:text-sm md:text-base font-extrabold uppercase tracking-wider text-[#566345] bg-[#566345]/10 border-l-4 border-[#566345] rounded-lg md:rounded-r-xl md:rounded-l-none flex-shrink-0 inline-flex md:flex items-center justify-center md:justify-start mb-0 md:mb-4"
+          data-target="m-hair">💇 Hair Artistry</button>
+        <button
+          class="tab-btn w-auto md:w-full px-4 py-2 md:py-3 text-left font-label text-xs sm:text-sm md:text-base font-medium md:font-semibold uppercase tracking-wider text-[#1a1c1a]/70 hover:text-[#1a1c1a] transition-all rounded-lg md:rounded-r-xl md:rounded-l-none flex-shrink-0 inline-flex md:flex items-center justify-center md:justify-start mb-0 md:mb-4"
+          data-target="m-nails">💅 Nail Lounge</button>
+        <button
+          class="tab-btn w-auto md:w-full px-4 py-2 md:py-3 text-left font-label text-xs sm:text-sm md:text-base font-medium md:font-semibold uppercase tracking-wider text-[#1a1c1a]/70 hover:text-[#1a1c1a] transition-all rounded-lg md:rounded-r-xl md:rounded-l-none flex-shrink-0 inline-flex md:flex items-center justify-center md:justify-start mb-0 md:mb-4"
+          data-target="m-makeup">💄 Makeup & Glam</button>
+        <button
+          class="tab-btn w-auto md:w-full px-4 py-2 md:py-3 text-left font-label text-xs sm:text-sm md:text-base font-medium md:font-semibold uppercase tracking-wider text-[#1a1c1a]/70 hover:text-[#1a1c1a] transition-all rounded-lg md:rounded-r-xl md:rounded-l-none flex-shrink-0 inline-flex md:flex items-center justify-center md:justify-start mb-0 md:mb-4"
+          data-target="m-skin">🌿 Skin & Waxing</button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto p-10 lg:p-16 bg-white" id="explorer-panels">
+        <!-- HAIR ARTISTRY PANEL -->
+        <div id="m-hair" class="tab-panel flex flex-col gap-12">
+          <h2
+            class="font-headline text-3xl md:text-4xl font-extrabold text-[#1a1c1a] tracking-wide mb-8 border-b pb-4 border-black/10">
+            Hair Design & Technical Care</h2>
+          <div
+            class="columns-1 md:columns-2 gap-8 space-y-8 w-full block text-sm md:text-base font-body text-[#1a1c1a]/80">
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Hair Cutting</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Ladies Haircut
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Men’s Haircut
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Children’s Haircut
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Fringe (Bangs) Trim
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Split End Trim
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Restyle Haircut
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Hair Coloring</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Global Hair Color
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Root Touch-Up
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Grey Coverage
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Highlights
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Lowlights
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Babylights
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Balayage
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Ombre
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Sombre
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Money Piece
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Fashion
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Vivid Colors
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Color Correction
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Gloss
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Toner
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Hair Treatments</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Deep Conditioning Treatment
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hair Spa
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Keratin Treatment
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Nanoplastia
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Botox Hair Treatment
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Protein Treatment
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Scalp Detox
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Moisture Treatment
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Anti-Hair Fall Treatment
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Dandruff Treatment
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Damaged Hair Repair Treatment
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Hair Straightening & Smoothing</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Permanent Hair Straightening
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hair Rebonding
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Keratin Smoothing
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Japanese Straightening
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Hair Styling & Curling</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Blow Dry
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Blowout
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hair Ironing
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hair Curling
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Party Hairstyle
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Bridal Hairstyle
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Engagement Hairstyle
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Reception Hairstyle
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Updo
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Braiding
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Ponytail Styling
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Traditional Kandyan Bridal Hair
+                  Styling
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Hair Extensions</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Clip-In Extensions
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Tape-In Extensions
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Keratin Bond Extensions
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Weave Extensions
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Extension Maintenance & Removal
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Scalp Services & Consultations</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Scalp Analysis
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Scalp Scrub
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Oil
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Head Massage
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hair Growth Therapy
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hair
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Color Consultation
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hair Damage Assessment
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hair Care Advice
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Men’s Hair Services & Add-Ons</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Haircut
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Beard Trim
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Styling
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hair Coloring
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Grey Blending
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hair Straightening
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hair Spa
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Scalp Treatment
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Shampoo & Conditioning
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Premium Shampoo
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Steam
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Leave-In Treatment
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hair Serum Finish
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- NAIL LOUNGE PANEL -->
+        <div id="m-nails" class="tab-panel hidden flex flex-col gap-12">
+          <h2
+            class="font-headline text-3xl md:text-4xl font-extrabold text-[#1a1c1a] tracking-wide mb-8 border-b pb-4 border-black/10">
+            Nail Architecture & Spas</h2>
+          <div
+            class="columns-1 md:columns-2 gap-8 space-y-8 w-full block text-sm md:text-base font-body text-[#1a1c1a]/80">
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Basic & Manicure Services</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Nail Cutting
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Shaping
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Filing
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Cuticle Care
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Nail Buffing
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Cleaning
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Polish Change
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Removal
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Gel Polish Removal
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Acrylic Removal
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Classic
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Express
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Spa
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Luxury
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Deluxe
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Aromatherapy
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Paraffin Wax
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Brightening
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hydrating
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Anti-Aging
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Men's
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Bridal Manicures
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Pedicure Services</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Classic
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Express
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Spa
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Luxury
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Deluxe
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Aromatherapy
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Paraffin
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Callus Removal
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Heel Repair
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Detox
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hydrating
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Men's
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Bridal Pedicures
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Gel & Acrylic Advanced</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Gel Polish Application
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Removal
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Reapplication
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Builder Gel Overlay
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  BIAB
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Gel Extensions
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Refill
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Repair
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Full Set Acrylic
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Acrylic Overlay
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Refill
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Repair
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Removal
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Extensions & Nail Art</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Gel
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Acrylic
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Dual Form
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Soft Gel-X Extensions
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Extension Refill
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Removal
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Reshaping
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Simple
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Premium
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hand-Painted Art
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  French Tips
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Ombre
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Chrome
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Cat Eye
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Marble
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Glitter
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  3D Art
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Rhinestones
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Foil
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Stamping
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Encapsulated Art
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Bridal
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Custom Design
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Care & Kids Lounge</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  IBX Repair
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Strengthening
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Cuticle Oil
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Nail Hydration
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Damaged
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Brittle Treatments
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Foot
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hand Scrubs
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Masks
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Massages
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Heel Crack Treatment
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Dead Skin Removal
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Kids Manicure
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Pedicure
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Polish
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Art
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Bridal Nail Packages
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAKEUP & GLAM PANEL -->
+        <div id="m-makeup" class="tab-panel hidden flex flex-col gap-12">
+          <h2
+            class="font-headline text-3xl md:text-4xl font-extrabold text-[#1a1c1a] tracking-wide mb-8 border-b pb-4 border-black/10">
+            Luxury Bridal & Event Makeup</h2>
+          <div
+            class="columns-1 md:columns-2 gap-8 space-y-8 w-full block text-sm md:text-base font-body text-[#1a1c1a]/80">
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Bridal Makeup</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Kandyan
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Indian
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Muslim
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Western
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Christian
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hindu
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Tamil
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Reception
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Homecoming
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Destination
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Bridal Trial Makeup
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Touch-Up Service
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Party, Event & Occasions</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Party Makeup
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Evening
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Soft
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Full Glam
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Natural
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Birthday
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Engagement
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Anniversary
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Cocktail
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Prom
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Graduation
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Baby Shower
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Photoshoot
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Fashion
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Stage
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Bridesmaid
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Mother of Bride
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Groom
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Wedding Guest
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Maid of Honor
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Flower Girl (Light)
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Traditional, Groom & Eye Special</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Kandyan Makeup
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Saree Look
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Traditional Dance
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Cultural Events
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Groom Makeup
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Skin Prep
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Groom Hairstyling
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Touch-Up
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Eye Makeup Only
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Smokey Eye
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Glitter Eye
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Cut Crease
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Eyelash
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Individual Lash Application
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Makeup Add-Ons, Lessons & Consultations</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Airbrush
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  HD
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Waterproof
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Long-Wear
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Body Glow
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Neck & Shoulder Makeup
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hair Styling
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Saree Draping
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Veil
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Jewelry Setting with Makeup
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Self-Makeup Class
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Beginner
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Professional Courses
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Bridal Workshop
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  1-to-1 Training
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Skin Tone Analysis
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Foundation Matching
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Consultation Sessions
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- SKINCARE & WAXING PANEL -->
+        <div id="m-skin" class="tab-panel hidden flex flex-col gap-12">
+          <h2
+            class="font-headline text-3xl md:text-4xl font-extrabold text-[#1a1c1a] tracking-wide mb-8 border-b pb-4 border-black/10">
+            Clinical Skincare & Full Body Waxing</h2>
+          <div
+            class="columns-1 md:columns-2 gap-8 space-y-8 w-full block text-sm md:text-base font-body text-[#1a1c1a]/80">
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Facials (Basic & Advanced)</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Express
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Classic
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Deep Cleansing
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hydrating
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Brightening
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Refresh
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Glow
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Sensitive Skin
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Gold
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Diamond
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Pearl
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Platinum
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Silver
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Vitamin C
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Collagen
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Oxygen
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hyaluronic Acid
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Anti-Aging
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Firming
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Luxury Facials
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Skin Concerns & Medi-Facials</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Acne Treatment
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Acne Scar
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Pigmentation
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Dark Spot
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Melasma
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Tan Removal
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Dull
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Dry
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Oily
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Combination
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Sensitive Skin
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Pore Minimizing
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Blackhead
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Whitehead Removal
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hydra Facial
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  BB Glow
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Carbon Facial
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  RF Skin Tightening
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  LED Light Therapy
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Oxygen Infusion
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Ultrasound
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Galvanic
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  High Frequency Acne Treatment
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Microcurrent
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm break-inside-avoid inline-block w-full">
+              <h4
+                class="font-headline text-lg md:text-xl font-extrabold text-[#566345] tracking-wider mb-4 border-b border-[#566345]/20 pb-2 uppercase">
+                Exfoliation & Rejuvenation</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Enzyme
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Fruit Peel
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Chemical Peel
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Microdermabrasion
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Dermaplaning
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Collagen
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Skin Tightening Boost
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Fine Lines
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Elasticity
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Radiance
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Under-Eye Brightening
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Dark Circles
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Puffy Eyes
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Lip Scrub
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hydration
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Mask
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Body Scrubs
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Back Facial
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Back Acne
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Body Polishing
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Brightening
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hydrating
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Hand
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Foot Brightening
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Skin Analysis
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Skincare Plans
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  Product Consultation
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Premium Packages</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-[#faf9f5] p-6 rounded-2xl border border-black/5 shadow-sm">
+              <h4 class="font-headline font-extrabold tracking-widest text-sm text-[#566345] mb-3 uppercase">Face & Body
+                Waxing Lounge</h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Eyebrow</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Upper</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Lower Lip</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Chin</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Sideburn</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Forehead</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Nose</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Ears</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Full Face</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Underarm</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Half</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Full Arm</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Hands</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Shoulders</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Chest</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Stomach</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Full Back</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Half</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Full Leg</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Feet</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Inner</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Outer Thigh</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Bikini Line</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Extended Bikini</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Hollywood</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Men’s Chest</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Back</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Shoulder</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Stomach</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Arms</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Legs</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Underarm</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Neck Waxing</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Full</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Half Body Packages</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Soft</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Hard</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Chocolate</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Aloe</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Honey</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Sensitive Wax Types</span>
+                </li>
+                <li
+                  class="text-sm text-[#1a1c1a]/80 font-medium py-1 transition-colors hover:text-[#566345] duration-200">
+                  <span>Pre- & Post-Wax Soothing
+                    Care</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal Box Area -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <button id="prev-btn" class="nav-btn" style="left: 20px;">❮</button>
+    <img width="1200" height="800" loading="lazy" id="lightbox-img" class="lightbox-img" src="" alt="Full View">
+    <button id="next-btn" class="nav-btn" style="right: 20px;">❯</button>
+  </div>
+
+  <!-- Luxury Video Lightbox Modal Framework -->
+  <div id="video-lightbox"
+    class="fixed inset-0 z-[250] bg-black/95 backdrop-blur-md opacity-0 invisible transition-all duration-300 flex items-center justify-center p-4">
+    <button id="close-video-lightbox-btn"
+      class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors flex items-center justify-center cursor-pointer">
+      <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+    <div class="w-full max-w-[450px] max-h-[90vh] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl bg-black">
+      <video id="lightbox-video-player" class="w-full h-full object-cover" controls playsinline
+        preload="metadata"></video>
+    </div>
+  </div>
+
+  <!-- Floating Social Icons Wrapper -->
+  <div class="fixed bottom-12 right-12 z-50 flex flex-col gap-4">
+    <a href="https://web.facebook.com/SalonLooha" target="_blank"
+      class="w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1a1c1a] shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300 transform hover:-translate-x-1 cursor-pointer group">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/salon_looha" target="_blank"
+      class="w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1a1c1a] shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300 transform hover:-translate-x-1 cursor-pointer group">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+      </svg>
+    </a>
+    <a href="https://www.tiktok.com/@loohaunisexsalon?_r=1&_t=ZS-986LYGqBx13" target="_blank" rel="noopener noreferrer"
+      class="w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1a1c1a] shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300 transform hover:-translate-x-1 cursor-pointer group"
+      aria-label="TikTok">
+      <svg class="w-5 h-5 block" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+        style="display: block; margin: auto;">
+        <path
+          d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.56 2.89 2.89 0 0 1 2.54-4.34c.19 0 .39.02.58.06V9.5a6.35 6.35 0 0 0-3.12.01A6.33 6.33 0 0 0 2 15.83a6.34 6.34 0 0 0 10.86 4.44A6.29 6.29 0 0 0 15.82 16V8.52a8.27 8.27 0 0 0 4.77 1.52V6.59c-.36 0-.7-.03-1-.1z" />
+      </svg>
+    </a>
+    <a href="https://api.whatsapp.com/send?phone=94776201254" target="_blank"
+      class="w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1a1c1a] shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300 transform hover:-translate-x-1 cursor-pointer group">
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- Universal Legal Info Modal -->
+  <div id="legal-modal"
+    class="fixed inset-0 z-[260] bg-black/80 opacity-0 invisible flex items-center justify-center p-4 backdrop-blur-sm transition-all duration-300">
+    <div
+      class="bg-[#faf9f5] w-full max-w-[500px] rounded-3xl p-8 relative shadow-2xl border border-black/5 transform scale-95 transition-transform duration-300"
+      id="legal-modal-content">
+      <button id="close-legal-btn"
+        class="absolute top-5 right-6 text-xl text-[#1a1c1a]/60 hover:text-[#1a1c1a] font-bold cursor-pointer">×</button>
+      <h3 id="legal-title"
+        class="font-headline text-2xl font-bold text-[#1a1c1a] mb-4 tracking-wide uppercase text-center"></h3>
+      <p id="legal-body" class="font-body text-sm text-[#1a1c1a]/80 leading-relaxed text-center font-medium"></p>
+    </div>
+  </div>
+
+  <!-- Dynamic Core Routing Script Restored & AOS Fix Implemented -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ duration: 1000, once: true });
+
+      // LEGAL MODAL TRIGGER LOGIC
+      const legalModal = document.getElementById('legal-modal');
+      const legalModalContent = document.getElementById('legal-modal-content');
+      const legalTitle = document.getElementById('legal-title');
+      const legalBody = document.getElementById('legal-body');
+      const closeLegalBtn = document.getElementById('close-legal-btn');
+
+      const legalData = {
+        'privacy': {
+          title: "Privacy Policy",
+          body: "At Salon Looha, we value your privacy. All your personal data, contact information, and appointment details are securely stored within our private system and will never be shared with any third-party marketing entities."
+        },
+        'terms': {
+          title: "Terms of Service",
+          body: "We operate as a premium luxury unisex salon sanctuary. All treatments and transformations are scheduled strictly based on pre-booked slots. We kindly ask our esteemed clients to maintain timely arrivals."
+        },
+        'cancel': {
+          title: "Cancellation Policy",
+          body: "If you need to reschedule or cancel your session, please notify us at least 2 hours in advance. This allows us to offer the slot to other clients on our waitlist. Thank you for respecting our stylists' time."
+        }
+      };
+
+      document.querySelectorAll('.legal-trigger').forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+          e.preventDefault();
+          const legalType = trigger.getAttribute('data-legal');
+          const data = legalData[legalType];
+          if (data) {
+            legalTitle.textContent = data.title;
+            legalBody.textContent = data.body;
+            legalModal.classList.remove('invisible', 'opacity-0');
+            legalModal.classList.add('opacity-100');
+            setTimeout(() => legalModalContent.classList.add('scale-100'), 10);
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+
+      if (closeLegalBtn) {
+        closeLegalBtn.addEventListener('click', () => {
+          legalModalContent.classList.remove('scale-100');
+          legalModal.classList.remove('opacity-100');
+          legalModal.classList.add('opacity-0');
+          setTimeout(() => {
+            legalModal.classList.add('invisible');
+            document.body.style.overflow = '';
+          }, 300);
+        });
+      }
+
+      if (legalModal) {
+        legalModal.addEventListener('click', (e) => {
+          if (e.target === legalModal) {
+            closeLegalBtn.click();
+          }
+        });
+      }
+
+
+      // 🛡️ Flash-Free Dynamic Anchor Placement with AOS Bypass
+      if (window.location.hash) {
+        const targetHash = window.location.hash;
+
+        document.documentElement.style.visibility = 'hidden';
+        document.documentElement.style.scrollBehavior = 'auto';
+
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            if (typeof AOS !== 'undefined') { AOS.refresh(); }
+
+            const targetSection = document.querySelector(targetHash);
+            const navbar = document.getElementById('floating-navbar');
+
+            if (targetSection) {
+              const innerHeader = targetSection.querySelector('h2') || targetSection.querySelector('.text-center') || targetSection;
+
+              // Temporarily disable AOS transform to compute perfect Y coordinate
+              const animatedNode = targetSection.querySelector('[data-aos]') || targetSection;
+              const originalTransition = animatedNode.style.transition;
+              const originalTransform = animatedNode.style.transform;
+              animatedNode.style.transition = 'none';
+              animatedNode.style.transform = 'translate3d(0, 0, 0)';
+
+              void document.body.offsetHeight;
+              const cushion = (targetHash === '#gallery-section') ? 152 : (targetHash === '#services-section' ? 100 : 116);
+              const navOffset = navbar ? navbar.offsetHeight + cushion : 180;
+
+              const elementPosition = innerHeader.getBoundingClientRect().top + window.pageYOffset;
+              const offsetPosition = elementPosition - navOffset;
+
+              animatedNode.style.transform = originalTransform;
+              animatedNode.style.transition = originalTransition;
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'auto'
+              });
+
+              targetSection.style.opacity = '0';
+              targetSection.style.transform = 'translateY(10px)';
+              targetSection.style.transition = 'opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+
+              document.documentElement.style.visibility = 'visible';
+
+              requestAnimationFrame(() => {
+                targetSection.style.opacity = '1';
+                targetSection.style.transform = 'translateY(0)';
+              });
+            } else {
+              document.documentElement.style.visibility = 'visible';
+            }
+          }, 150);
+        });
+      }
+
+      // Permanently Static Visible Navbar Controller
+      const navbar = document.getElementById('floating-navbar');
+      const logo = document.getElementById('nav-logo');
+      const links = document.querySelectorAll('.nav-link');
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const sections = document.querySelectorAll('[data-nav-theme]');
+      const openNavCta = document.getElementById('open-booking-btn-nav');
+
+      const applyTheme = (theme, activeIndex = 0) => {
+        if (theme === 'light') {
+          navbar.classList.remove('bg-white', 'bg-white/85', 'bg-white/70');
+          navbar.classList.add('bg-[#adbb98]/75');
+          logo.classList.remove('mix-blend-multiply');
+          logo.classList.add('brightness-0', 'invert');
+
+          links.forEach((link, index) => {
+            link.classList.remove('text-[#1a1c1a]', 'border-[#adbb98]', 'text-[#1a1c1a]/60', 'hover:text-[#1a1c1a]', 'border-b-[2px]', 'pb-0.5', 'border-white', 'text-white/90', 'hover:text-white', 'text-white');
+            if (index === activeIndex) {
+              link.classList.add('text-white', 'border-b-[2px]', 'border-white', 'pb-0.5');
+            } else {
+              link.classList.add('text-white/90', 'hover:text-white');
+            }
+          });
+
+          if (openNavCta) {
+            openNavCta.classList.remove('bg-[#adbb98]', 'text-white', 'hover:bg-[#9cae86]');
+            openNavCta.classList.add('bg-white', 'text-[#adbb98]', 'hover:bg-[#fcfcfc]');
+          }
+
+          if (menuBtn) {
+            menuBtn.classList.remove('text-[#1a1c1a]');
+            menuBtn.classList.add('text-white');
+          }
+        } else {
+          navbar.classList.add('bg-white/70');
+          navbar.classList.remove('bg-[#adbb98]', 'bg-[#adbb98]/75');
+          logo.classList.add('mix-blend-multiply');
+          logo.classList.remove('brightness-0', 'invert');
+
+          links.forEach((link, index) => {
+            link.classList.remove('text-white', 'border-white', 'text-white/90', 'hover:text-white', 'border-b-[2px]', 'pb-0.5', 'border-[#adbb98]', 'text-[#1a1c1a]/60', 'hover:text-[#1a1c1a]', 'text-[#1a1c1a]');
+            if (index === activeIndex) {
+              link.classList.add('text-[#1a1c1a]', 'border-b-[2px]', 'border-[#adbb98]', 'pb-0.5');
+            } else {
+              link.classList.add('text-[#1a1c1a]/60', 'hover:text-[#1a1c1a]');
+            }
+          });
+
+          if (openNavCta) {
+            openNavCta.classList.add('bg-[#adbb98]', 'text-white', 'hover:bg-[#9cae86]');
+            openNavCta.classList.remove('bg-white', 'text-[#adbb98]', 'hover:bg-[#fcfcfc]');
+          }
+
+          if (menuBtn) {
+            menuBtn.classList.add('text-[#1a1c1a]');
+            menuBtn.classList.remove('text-white');
+          }
+        }
+      };
+
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+              mobileMenu.classList.remove('opacity-0', '-translate-y-4');
+            }, 10);
+          } else {
+            mobileMenu.classList.add('opacity-0', '-translate-y-4');
+            setTimeout(() => {
+              mobileMenu.classList.add('hidden');
+            }, 300);
+          }
+        });
+
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0', '-translate-y-4');
+            setTimeout(() => {
+              mobileMenu.classList.add('hidden');
+            }, 300);
+          });
+        });
+      }
+
+      window.addEventListener('scroll', () => {
+        const navRect = navbar.getBoundingClientRect();
+        const triggerY = navRect.top + (navRect.height / 2);
+        let currentTheme = 'dark';
+        let activeIndex = -1;
+
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= triggerY && rect.bottom >= triggerY) {
+            currentTheme = section.getAttribute('data-nav-theme');
+          }
+        });
+
+        links.forEach((link, index) => {
+          const href = link.getAttribute('href');
+          if (href.startsWith('#') && href !== '#') {
+            const section = document.querySelector(href);
+            if (section) {
+              const rect = section.getBoundingClientRect();
+              if (rect.top <= triggerY + 200 && rect.bottom >= triggerY + 100) {
+                activeIndex = index;
+              }
+            }
+          } else if (href === 'index.html' || href === '#') {
+            if (window.scrollY < window.innerHeight / 2) {
+              activeIndex = index;
+            }
+          }
+        });
+
+        applyTheme(currentTheme, activeIndex !== -1 ? activeIndex : 0);
+      });
+
+      window.dispatchEvent(new Event('scroll'));
+
+      // ⚡ MASTER LOOKBOOK GALLERY TRIGGER PIPELINES
+      const gridWrapper = document.getElementById('popup-grid-wrapper');
+      const filterButtons = document.querySelectorAll('#popup-gallery .filter-btn');
+      const categories = ['bridal', 'party', 'nails', 'hair'];
+
+      const lookbookDatabase = {};
+      categories.forEach(cat => {
+        lookbookDatabase[cat] = [];
+        for (let i = 1; i <= 20; i++) {
+          lookbookDatabase[cat].push(`lookbook/${cat}/photos/${cat}-${i}.webp`);
+        }
+      });
+
+      const renderLookbookGrid = (activeCat) => {
+        if (!gridWrapper) return;
+        gridWrapper.innerHTML = '';
+        const photosList = lookbookDatabase[activeCat] || [];
+
+        photosList.forEach((src, index) => {
+          const card = document.createElement('div');
+          card.className = "popup-item aspect-square rounded-xl overflow-hidden shadow-sm hover:scale-105 transition-all duration-300 cursor-pointer";
+
+          const img = document.createElement('img');
+          img.className = "w-full h-full object-cover";
+          img.src = src;
+
+          img.addEventListener('click', () => {
+            if (typeof window.openLightboxEngine === 'function') {
+              window.openLightboxEngine(photosList, index);
+            }
+          });
+
+          card.appendChild(img);
+          gridWrapper.appendChild(card);
+        });
+      };
+
+      let currentActiveMainCategory = "bridal";
+
+      const mainTabBtns = document.querySelectorAll('.main-tab-btn');
+      mainTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          mainTabBtns.forEach(b => {
+            b.classList.remove('active-tab', 'border-[#adbb98]');
+            b.classList.add('border-black/10');
+          });
+          btn.classList.add('active-tab', 'border-[#adbb98]');
+          btn.classList.remove('border-black/10');
+
+          currentActiveMainCategory = btn.getAttribute('data-target');
+
+          for (let i = 1; i <= 4; i++) {
+            const img = document.getElementById(`preview-img-${i}`);
+            if (img) {
+              img.src = `lookbook/${currentActiveMainCategory}/${currentActiveMainCategory}-${i}.webp`;
+            }
+          }
+        });
+      });
+
+      window.openGalleryPopup = () => {
+        filterButtons.forEach(btn => {
+          if (btn.getAttribute('data-filter') === currentActiveMainCategory) btn.classList.add('active-tab');
+          else btn.classList.remove('active-tab');
+        });
+        renderLookbookGrid(currentActiveMainCategory);
+
+        const popup = document.getElementById('popup-gallery');
+        if (popup) {
+          popup.classList.remove('invisible', 'opacity-0');
+          popup.classList.add('opacity-100');
+          const popupContent = document.getElementById('popup-gallery-content');
+          if (popupContent) popupContent.classList.add('scale-100');
+          document.body.style.overflow = 'hidden';
+        }
+      };
+
+      const closeGalleryPopup = () => {
+        const popupContent = document.getElementById('popup-gallery-content');
+        const popup = document.getElementById('popup-gallery');
+        if (popupContent) {
+          popupContent.classList.remove('scale-100');
+          popupContent.classList.add('scale-95');
+        }
+        if (popup) {
+          popup.classList.remove('opacity-100');
+          popup.classList.add('opacity-0');
+          setTimeout(() => {
+            popup.classList.add('invisible');
+            document.body.style.overflow = '';
+          }, 400);
+        }
+      };
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(btn => btn.classList.remove('active-tab'));
+          button.classList.add('active-tab');
+          renderLookbookGrid(button.getAttribute('data-filter'));
+        });
+      });
+
+      const closeGalleryBtn = document.getElementById('close-gallery-btn');
+      if (closeGalleryBtn) closeGalleryBtn.addEventListener('click', closeGalleryPopup);
+      const popupGalleryEl = document.getElementById('popup-gallery');
+      if (popupGalleryEl) popupGalleryEl.addEventListener('click', (e) => { if (e.target === popupGalleryEl) closeGalleryPopup(); });
+
+      // FULL MENU EXPLORER DYNAMIC PORTAL MATRIX
+      const explorerModal = document.getElementById('services-explorer-modal');
+      const closeExplorerBtn = document.getElementById('close-explorer-btn');
+      const tabBtns = document.querySelectorAll('#explorer-tabs .tab-btn');
+      const tabPanels = document.querySelectorAll('#explorer-panels .tab-panel');
+
+      const setupModalLinks = () => {
+        document.querySelectorAll('.open-services-explorer').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            explorerModal.classList.remove('invisible', 'opacity-0');
+            explorerModal.classList.add('opacity-100');
+            document.body.style.overflow = 'hidden';
+
+            const indexSelection = e.currentTarget.getAttribute('data-tab-index');
+            if (indexSelection !== null && tabBtns[indexSelection]) {
+              tabBtns[indexSelection].click();
+            }
+          });
+        });
+      };
+
+      setupModalLinks();
+
+      if (closeExplorerBtn) {
+        closeExplorerBtn.addEventListener('click', () => {
+          explorerModal.classList.remove('opacity-100');
+          explorerModal.classList.add('opacity-0');
+          setTimeout(() => {
+            explorerModal.classList.add('invisible');
+            document.body.style.overflow = '';
+          }, 300);
+        });
+      }
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-target');
+
+          // Loop through all tab buttons
+          document.querySelectorAll('.tab-btn').forEach(b => {
+            // Explicitly remove all premium active styling classes
+            b.classList.remove('active', 'text-[#566345]', 'font-extrabold', 'bg-[#566345]/10', 'border-l-4', 'border-[#566345]');
+            // Additional cleanup of rogue gray classes from earlier versions
+            b.classList.remove('text-[#1a1c1a]', 'border-[#adbb98]', 'bg-[#1a1c1a]/5', 'text-[#1a1c1a]/60', 'hover:text-[#1a1c1a]', 'hover:bg-[#1a1c1a]/5');
+            // Explicitly restore standard unselected typography
+            b.classList.add('text-[#1a1c1a]/70', 'font-semibold');
+          });
+
+          // Apply the premium active design tokens ONLY to the currently clicked button
+          btn.classList.remove('text-[#1a1c1a]/70', 'font-semibold');
+          btn.classList.add('active', 'text-[#566345]', 'font-extrabold', 'bg-[#566345]/10', 'border-l-4', 'border-[#566345]');
+
+          tabPanels.forEach(panel => {
+            if (panel.id === target) panel.classList.remove('hidden');
+            else panel.classList.add('hidden');
+          });
+        });
+      });
+
+      // BEFORE AFTER SLIDER LIFECYCLE
+      const modal = document.getElementById('booking-modal');
+      const modalContent = document.getElementById('booking-modal-content');
+      const sliderPanel = document.getElementById('modal-slider-panel');
+      const dropdown = document.getElementById('modalServiceNeeded');
+      const beforeImgEl = document.getElementById('slider-before-img');
+      const afterImgEl = document.getElementById('slider-after-img');
+      const clipSliderInput = document.getElementById('clip-range-slider');
+      const sliderBar = document.getElementById('slider-split-bar');
+
+      const indexImageMapping = [
+        { before: "before-after/before_hair.jpeg", after: "before-after/after_hair.jpeg", service: "Hair Artistry" },
+        { before: "before-after/before_bridal.jpeg", after: "before-after/after_bridal.jpeg", service: "Makeup & Glam" },
+        { before: "before-after/before_nails.jpeg", after: "before-after/after_nails.jpeg", service: "Nail Lounge" },
+        { before: "before-after/before_transformation.jpeg", after: "before-after/after_transformation.jpeg", service: "Complete Transformation" }
+      ];
+
+      if (clipSliderInput && afterImgEl && sliderBar) {
+        clipSliderInput.addEventListener('input', (e) => {
+          const val = e.target.value;
+          afterImgEl.style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
+          sliderBar.style.left = `${val}%`;
+        });
+      }
+
+      document.querySelectorAll('.service-explore-btn').forEach((card) => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.open-services-explorer')) return;
+
+          const idx = parseInt(card.getAttribute('data-service-index'));
+          const config = indexImageMapping[idx];
+          if (!config) return;
+
+          if (beforeImgEl && afterImgEl) {
+            beforeImgEl.src = config.before;
+            afterImgEl.src = config.after;
+          }
+
+          if (clipSliderInput && sliderBar) {
+            clipSliderInput.value = 50;
+            afterImgEl.style.clipPath = `polygon(0 0, 50% 0, 50% 100%, 0 100%)`;
+            sliderBar.style.left = `50%`;
+          }
+
+          if (sliderPanel) sliderPanel.classList.remove('hidden');
+          if (modalContent) {
+            modalContent.classList.remove('max-w-[600px]');
+            modalContent.classList.add('max-w-[1024px]');
+          }
+          if (dropdown) dropdown.value = config.service;
+
+          modal.classList.remove('invisible', 'opacity-0');
+          modal.classList.add('opacity-100');
+          setTimeout(() => modalContent.classList.add('scale-100'), 10);
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      const openModalGeneral = () => {
+        if (sliderPanel) sliderPanel.classList.add('hidden');
+        if (modalContent) {
+          modalContent.classList.remove('max-w-[1024px]');
+          modalContent.classList.add('max-w-[600px]');
+        }
+        if (dropdown) dropdown.value = "";
+        modal.classList.remove('invisible', 'opacity-0');
+        modal.classList.add('opacity-100');
+        setTimeout(() => modalContent.classList.add('scale-100'), 10);
+        document.body.style.overflow = 'hidden';
+      };
+
+      const instantUnlockScroll = () => {
+        document.body.style.overflow = '';
+      };
+
+      if (openNavCta) openNavCta.addEventListener('click', openModalGeneral);
+
+      if (document.getElementById('close-booking-btn')) {
+        document.getElementById('close-booking-btn').addEventListener('click', (e) => {
+          e.preventDefault();
+          instantUnlockScroll();
+          if (modal) modal.className = "fixed inset-0 z-[150] bg-black/60 opacity-0 invisible flex items-center justify-center p-4 backdrop-blur-md transition-all duration-200";
+        });
+      }
+
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.className = "fixed inset-0 z-[150] bg-black/60 opacity-0 invisible flex items-center justify-center p-4 backdrop-blur-md transition-all duration-200";
+            instantUnlockScroll();
+          }
+        });
+      }
+
+      const modalForm = document.getElementById('whatsapp-booking-form-modal');
+      if (modalForm) {
+        modalForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const WHATSAPP_NUMBER = '94776201254';
+          const clientName = document.getElementById('modalClientName').value;
+          const clientPhone = document.getElementById('modalClientPhone').value;
+          const clientEmail = document.getElementById('modalClientEmail').value;
+          const parentService = dropdown ? dropdown.value : "";
+          const clientMsg = document.getElementById('modalClientMessage').value;
+
+          let messageText = `Hello! I would like to book an appointment.\n\n` +
+            `*Client Name:* ${clientName}\n` +
+            `*Email Address:* ${clientEmail}\n` +
+            `*Client Phone:* ${clientPhone}\n`;
+
+          if (parentService) messageText += `*Service Requested:* ${parentService}\n`;
+          if (clientMsg) messageText += `*Additional Details:* ${clientMsg}\n`;
+
+          window.open(`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(messageText)}`, '_blank');
+        });
+      }
+
+      const viewMenuBtn = document.getElementById('modal-view-menu-btn');
+      if (viewMenuBtn) {
+        viewMenuBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetSection = document.getElementById('services-section');
+          if (modal) {
+            modal.className = "fixed inset-0 z-[150] bg-black/60 opacity-0 invisible flex items-center justify-center p-4 backdrop-blur-md transition-all duration-200";
+            if (typeof instantUnlockScroll === 'function') instantUnlockScroll();
+          }
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Add a small delay to allow smooth scrolling to begin, then trigger the services explorer
+            setTimeout(() => {
+              const exploreBtn = document.querySelector('.open-services-explorer');
+              if (exploreBtn) exploreBtn.click();
+            }, 500);
+          }
+        });
+      }
+
+      // Hero Destination Wedding Controls
+      const destModal = document.getElementById('destination-modal');
+      const destModalContent = document.getElementById('destination-modal-content');
+      const openDestBtn = document.getElementById('open-booking-btn-hero');
+
+      if (openDestBtn) {
+        openDestBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          destModal.classList.remove('invisible', 'opacity-0');
+          destModal.classList.add('opacity-100');
+          setTimeout(() => destModalContent.classList.add('scale-100'), 10);
+          document.body.style.overflow = 'hidden';
+        });
+      }
+
+      if (document.getElementById('close-destination-btn')) {
+        document.getElementById('close-destination-btn').addEventListener('click', (e) => {
+          e.preventDefault();
+          instantUnlockScroll();
+          if (destModal) destModal.className = "fixed inset-0 z-[170] bg-black/70 opacity-0 invisible flex items-center justify-center p-4 backdrop-blur-md transition-all duration-200";
+        });
+      }
+
+      // ⚡ PRELOADER & HERO VIDEO DYNAMIC SYNC LIFECYCLE 
+      const preloader = document.getElementById('preloader');
+      const counterText = document.getElementById('counter-text');
+      const progressBar = document.getElementById('progress-bar');
+      const heroVideo = document.getElementById('hero-video');
+
+      if (preloader && counterText && progressBar && heroVideo) {
+        const loaderSeen = sessionStorage.getItem('homeLoaderSeen');
+
+        if (loaderSeen === 'true') {
+          preloader.remove();
+          document.body.classList.remove('overflow-hidden');
+        } else {
+          let count = 0;
+          const intervalTime = 15;
+          const increment = 100 / (1200 / intervalTime);
+
+          const counterInterval = setInterval(() => {
+            count += increment;
+            if (count >= 100) {
+              count = 100;
+              clearInterval(counterInterval);
+              counterText.innerText = '100%';
+              progressBar.style.width = '100%';
+              sessionStorage.setItem('homeLoaderSeen', 'true');
+
+              // Wait until the video is buffered enough to play smoothly before fading the loader out
+              heroVideo.addEventListener('canplaythrough', hideLoaderEvent);
+
+              // Fail-safe: if video asset is already fully ready or cached
+              if (heroVideo.readyState >= 3) {
+                hideLoaderEvent();
+              }
+
+              // Absolute fail-safe: dismiss preloader after 4 seconds anyway to avoid freezing the UI on bad network states
+              setTimeout(hideLoaderEvent, 4000);
+            } else {
+              counterText.innerText = Math.floor(count) + '%';
+              progressBar.style.width = count + '%';
+            }
+          }, intervalTime);
+
+          function hideLoaderEvent() {
+            heroVideo.play().then(() => {
+              setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.pointerEvents = 'none';
+                setTimeout(() => {
+                  preloader.remove();
+                  document.body.classList.remove('overflow-hidden');
+                }, 1200);
+              }, 150);
+            }).catch(err => {
+              // If fully blocked by hard browser policy flags, dismiss loader anyway so the page is still accessible
+              preloader.style.opacity = '0';
+              preloader.style.pointerEvents = 'none';
+              setTimeout(() => {
+                preloader.remove();
+                document.body.classList.remove('overflow-hidden');
+              }, 1200);
+            });
+          }
+        }
+      }
+
+      // ⚡ INTUITIVE EXIT ANIMATION HANDLER & AOS LAYOUT BYPASS ⚡
+      document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (!href || this.getAttribute('target') === '_blank') return;
+
+          if (href === 'index.html' || href === '#' || href === '#top') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            history.pushState(null, null, ' ');
+            return;
+          }
+
+          if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetSection = document.querySelector(href);
+            if (targetSection) {
+              if (typeof AOS !== 'undefined') { AOS.refresh(); }
+
+              const innerHeader = targetSection.querySelector('h2') || targetSection.querySelector('.text-center') || targetSection;
+
+              // 🛡️ Bypass AOS layout shift calculation bug perfectly
+              const animatedNode = targetSection.querySelector('[data-aos]') || targetSection;
+              const originalTransition = animatedNode.style.transition;
+              const originalTransform = animatedNode.style.transform;
+              animatedNode.style.transition = 'none';
+              animatedNode.style.transform = 'translate3d(0, 0, 0)';
+
+              const navbar = document.getElementById('floating-navbar');
+              void document.body.offsetHeight;
+              const cushion = (href === '#gallery-section') ? 152 : (href === '#services-section' ? 100 : 116);
+              const navOffset = navbar ? navbar.offsetHeight + cushion : 180;
+
+              const elementPosition = innerHeader.getBoundingClientRect().top + window.pageYOffset;
+              const offsetPosition = elementPosition - navOffset;
+
+              animatedNode.style.transform = originalTransform;
+              animatedNode.style.transition = originalTransition;
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }
+            return;
+          }
+
+          if (href.includes('#')) {
+            e.preventDefault();
+            const parts = href.split('#');
+            let pageTarget = parts[0] || 'index.html';
+            localStorage.setItem('scrollTarget', '#' + parts[parts.length - 1]);
+
+            document.body.classList.remove('fade-in');
+            document.body.classList.add('fade-out');
+            setTimeout(() => { window.location.href = pageTarget; }, 300);
+            return;
+          }
+
+          e.preventDefault();
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+          setTimeout(() => { window.location.href = this.href; }, 300);
+        });
+      });
+
+      // Initial Load Routines & External Routing Handler
+      document.body.classList.add('fade-in');
+      const scrollTarget = localStorage.getItem('scrollTarget');
+      if (scrollTarget && !window.location.hash) {
+        localStorage.removeItem('scrollTarget');
+
+        // Ensure body starts completely hidden before layout rendering
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'none';
+
+        setTimeout(() => {
+          const targetSection = document.querySelector(scrollTarget);
+          if (targetSection) {
+            const innerHeader = targetSection.querySelector('h2') || targetSection.querySelector('.text-center') || targetSection;
+            const animatedNode = targetSection.querySelector('[data-aos]') || targetSection;
+
+            const originalTransition = animatedNode.style.transition;
+            const originalTransform = animatedNode.style.transform;
+            animatedNode.style.transition = 'none';
+            animatedNode.style.transform = 'translate3d(0, 0, 0)';
+
+            const navbar = document.getElementById('floating-navbar');
+            const cushion = (scrollTarget === '#gallery-section') ? 152 : (scrollTarget === '#services-section' ? 100 : 116);
+            const navOffset = navbar ? navbar.offsetHeight + cushion : 180;
+            const elementPosition = innerHeader.getBoundingClientRect().top + window.pageYOffset;
+            const finalPosition = elementPosition - navOffset;
+
+            animatedNode.style.transform = originalTransform;
+            animatedNode.style.transition = originalTransition;
+
+            // Snap to position invisibly behind the scenes
+            window.scrollTo({ top: finalPosition, behavior: 'auto' });
+
+            // Now trigger a beautiful, soft fade-in transition into view
+            requestAnimationFrame(() => {
+              document.body.style.transition = 'opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+              document.body.style.opacity = '1';
+            });
+          } else {
+            document.body.style.transition = 'opacity 0.6s ease';
+            document.body.style.opacity = '1';
+          }
+        }, 50); // Small cushion to allow layout initialization before the fade triggers
+      }
+
+      // Lookbook Lightbox Engine Component
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+
+      let currentLightboxPhotos = [];
+      let currentLightboxIndex = 0;
+
+      window.openLightboxEngine = function (photosList, index) {
+        currentLightboxPhotos = photosList;
+        currentLightboxIndex = index;
+        updateLightboxImage();
+        if (lightbox) lightbox.classList.add('open');
+      };
+
+      const updateLightboxImage = () => {
+        if (currentLightboxPhotos.length > 0 && lightboxImg) {
+          lightboxImg.src = currentLightboxPhotos[currentLightboxIndex];
+        }
+      };
+
+      window.closeLightbox = function () {
+        if (lightbox) lightbox.classList.remove('open');
+      };
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (currentLightboxPhotos.length === 0) return;
+          currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxPhotos.length;
+          updateLightboxImage();
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (currentLightboxPhotos.length === 0) return;
+          currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxPhotos.length) % currentLightboxPhotos.length;
+          updateLightboxImage();
+        });
+      }
+
+      if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) window.closeLightbox();
+        });
+      }
+
+      // Reels Video Lightbox Framework
+      const videoLightbox = document.getElementById('video-lightbox');
+      const lightboxVideoPlayer = document.getElementById('lightbox-video-player');
+      const closeVideoLightboxBtn = document.getElementById('close-video-lightbox-btn');
+
+      document.querySelectorAll('.reel-player').forEach(video => {
+        video.parentElement.addEventListener('mouseenter', () => video.play().catch(err => console.log("Hover block")));
+        video.parentElement.addEventListener('mouseleave', () => video.pause());
+
+        video.parentElement.addEventListener('click', (e) => {
+          e.preventDefault();
+          const sourceSrc = video.querySelector('source').getAttribute('src');
+          if (lightboxVideoPlayer && videoLightbox) {
+            lightboxVideoPlayer.src = sourceSrc;
+            lightboxVideoPlayer.muted = false;
+            document.body.style.overflow = 'hidden';
+            videoLightbox.classList.remove('invisible', 'opacity-0');
+            videoLightbox.classList.add('opacity-100');
+            lightboxVideoPlayer.play().catch(err => console.log("Playback error"));
+          }
+        });
+      });
+
+      const closeVideoLightbox = () => {
+        if (videoLightbox && lightboxVideoPlayer) {
+          lightboxVideoPlayer.pause();
+          lightboxVideoPlayer.src = '';
+          videoLightbox.classList.remove('opacity-100');
+          videoLightbox.classList.add('opacity-0', 'invisible');
+          document.body.style.overflow = '';
+        }
+      };
+
+      if (closeVideoLightboxBtn) closeVideoLightboxBtn.addEventListener('click', closeVideoLightbox);
+    });
+
+    window.addEventListener('pageshow', function (event) {
+      // If the page is loaded from the browser history cache (persisted state)
+      if (event.persisted) {
+        // Force a complete window reload to reset all CSS styling, modals, and hidden elements to their pristine initial states
+        window.location.reload();
+      }
+    });
+
+    window.addEventListener('load', function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('open') === 'menu') {
+        // 1. Locate the main Explore All Services section or anchor
+        const servicesSection = document.getElementById('services-section') || document.getElementById('services-menu') || document.querySelector('.explore-services-section');
+
+        if (servicesSection) {
+          // Smoothly view the section
+          servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+          // 2. Find and programmatically trigger the click event on the target element that unveils the full menu grid
+          setTimeout(() => {
+            const exploreBtn = document.querySelector('.open-services-explorer') ||
+              document.querySelector('button[id*="explore"]') ||
+              document.querySelector('a[href*="explore"]') ||
+              document.getElementById('tab-all-services') ||
+              Array.from(document.querySelectorAll('button, a')).find(el => el.textContent.includes('Explore All') || el.textContent.includes('View All'));
+
+            if (exploreBtn) {
+              exploreBtn.click();
+            }
+          }, 600);
+        }
+      }
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+
+</html>
