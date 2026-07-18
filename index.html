@@ -589,8 +589,7 @@
         <div class="max-w-5xl mx-auto">
           <div
             class="w-full min-h-[450px] md:min-h-[520px] flex items-center justify-center transition-all duration-300">
-            <script src="https://elfsightcdn.com/platform.js" async></script>
-            <div class="elfsight-app-18fed60e-552b-4300-94fd-fadde9652602" data-elfsight-app-lazy></div>
+            <script defer async src='https://cdn.trustindex.io/loader.js?9f8035a77bb10636c456ae5aaf0'></script>
           </div>
         </div>
       </div>
@@ -2664,7 +2663,8 @@
   <div id="lightbox" class="lightbox">
     <span class="close-btn" onclick="closeLightbox()">&times;</span>
     <button id="prev-btn" class="nav-btn" style="left: 20px;">❮</button>
-    <img width="1200" height="800" loading="lazy" decoding="async" id="lightbox-img" class="lightbox-img" src="" alt="Full View">
+    <img width="1200" height="800" loading="lazy" decoding="async" id="lightbox-img" class="lightbox-img" src=""
+      alt="Full View">
     <button id="next-btn" class="nav-btn" style="right: 20px;">❯</button>
   </div>
 
@@ -2734,26 +2734,6 @@
     document.addEventListener('DOMContentLoaded', () => {
       AOS.init({ duration: 1000, once: true });
 
-      // ⚡ ELFSIGHT GLOBE TO FAVICON REPLACEMENT LOGIC
-      const replaceGlobeWithFavicon = () => {
-        const globeIcons = document.querySelectorAll('.elfsight-app-18fed60e-552b-4300-94fd-fadde9652602 svg');
-        globeIcons.forEach(svg => {
-          // Check if this SVG is indeed the globe icon by checking its path or container
-          if (svg && !svg.classList.contains('favicon-replaced')) {
-            const img = document.createElement('img');
-            img.src = 'images/favicon.png';
-            img.className = 'w-4 h-4 rounded-full object-contain favicon-replaced';
-            img.style.width = '16px';
-            img.style.height = '16px';
-            svg.parentNode.replaceChild(img, svg);
-          }
-        });
-      };
-
-      // Run immediately and setup an interval since Elfsight loads asynchronously
-      const faviconInterval = setInterval(replaceGlobeWithFavicon, 500);
-      // Clear interval after 8 seconds to prevent endless looping
-      setTimeout(() => clearInterval(faviconInterval), 8000);
 
       // LEGAL MODAL TRIGGER LOGIC
       const legalModal = document.getElementById('legal-modal');
