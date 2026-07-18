@@ -392,35 +392,44 @@
     <!-- Hero Section -->
     <div class="relative w-full h-screen overflow-hidden bg-[#faf9f5]" style="width: 100%; height: 100vh;">
       <div class="absolute inset-0 overflow-hidden z-0 bg-[#1a1c1a]" style="width: 100%; height: 100%;">
-        <video autoplay loop muted playsinline preload="auto" fetchpriority="high" class="w-full h-full object-cover pointer-events-none" id="hero-video">
+        <video autoplay loop muted playsinline preload="auto" fetchpriority="high"
+          class="w-full h-full object-cover pointer-events-none" id="hero-video">
           <source src="Hero-Video/hero-video.mp4" type="video/mp4">
         </video>
         <script>
-          window.addEventListener('load', () => {
+          window.addEventListener('DOMContentLoaded', () => {
             const v = document.getElementById('hero-video');
             if (v) {
-              // Hard resetting properties programmatically
+              // Programmatically force constraints that Opera and other safe-browsers require
               v.muted = true;
-              v.currentTime = 0;
-              
-              // Force loading the video stream manually for strict browsers
-              v.load(); 
-              
-              const forcePlay = () => {
-                v.play().then(() => {
-                  window.removeEventListener('scroll', forcePlay);
-                  document.removeEventListener('click', forcePlay);
-                  document.removeEventListener('touchstart', forcePlay);
-                }).catch(err => console.log('Autoplay block bypassed'));
-              };
+              v.setAttribute('muted', '');
+              v.setAttribute('playsinline', '');
 
-              // Trigger immediately on load or within 50ms
-              setTimeout(() => { v.play().catch(() => console.log('Waiting for user action to play')); }, 50);
+              // Attempt immediate play
+              const playPromise = v.play();
 
-              // Ultimate listeners for cross-browser fallback
-              window.addEventListener('scroll', forcePlay, { passive: true });
-              document.addEventListener('click', forcePlay);
-              document.addEventListener('touchstart', forcePlay, { passive: true });
+              if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                  console.log("Opera/Browser blocked autoplay initial pass. Triggering event listeners.");
+
+                  // Fallback: Play immediately on first scroll or click within the viewport
+                  const forcePlayOnUserAction = () => {
+                    v.play().then(() => {
+                      cleanUpListeners();
+                    }).catch(err => console.log("Forced play failed:", err));
+                  };
+
+                  const cleanUpListeners = () => {
+                    window.removeEventListener('scroll', forcePlayOnUserAction);
+                    document.removeEventListener('click', forcePlayOnUserAction);
+                    document.removeEventListener('touchstart', forcePlayOnUserAction);
+                  };
+
+                  window.addEventListener('scroll', forcePlayOnUserAction, { passive: true });
+                  document.addEventListener('click', forcePlayOnUserAction);
+                  document.addEventListener('touchstart', forcePlayOnUserAction, { passive: true });
+                });
+              }
             }
           });
         </script>
