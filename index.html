@@ -396,22 +396,41 @@
           <source src="Hero-Video/hero-video.mp4" type="video/mp4">
         </video>
         <script>
-          const heroVideo = document.getElementById('hero-video');
-          if (heroVideo) {
-            // Force play immediately
-            heroVideo.play().catch(function() {
-              console.log("Autoplay blocked, retrying on user interaction.");
-            });
-            
-            // Backup trigger when the preloader finishes or page completely loads
-            window.addEventListener('load', function() {
-              setTimeout(function() {
-                heroVideo.play().catch(function(err) {
-                  console.log("Forced play failed:", err);
+          window.addEventListener('DOMContentLoaded', () => {
+            const v = document.getElementById('hero-video');
+            if (v) {
+              // Programmatically force constraints that Opera and other safe-browsers require
+              v.muted = true;
+              v.setAttribute('muted', '');
+              v.setAttribute('playsinline', '');
+              
+              // Attempt immediate play
+              const playPromise = v.play();
+              
+              if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                  console.log("Opera/Browser blocked autoplay initial pass. Triggering event listeners.");
+                  
+                  // Fallback: Play immediately on first scroll or click within the viewport
+                  const forcePlayOnUserAction = () => {
+                    v.play().then(() => {
+                      cleanUpListeners();
+                    }).catch(err => console.log("Forced play failed:", err));
+                  };
+
+                  const cleanUpListeners = () => {
+                    window.removeEventListener('scroll', forcePlayOnUserAction);
+                    document.removeEventListener('click', forcePlayOnUserAction);
+                    document.removeEventListener('touchstart', forcePlayOnUserAction);
+                  };
+
+                  window.addEventListener('scroll', forcePlayOnUserAction, { passive: true });
+                  document.addEventListener('click', forcePlayOnUserAction);
+                  document.addEventListener('touchstart', forcePlayOnUserAction, { passive: true });
                 });
-              }, 100);
-            });
-          }
+              }
+            }
+          });
         </script>
       </div>
       <div class="absolute inset-0 z-10 flex flex-col justify-center items-center text-center px-6"
