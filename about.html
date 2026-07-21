@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="light scroll-smooth" lang="en">
+<html class="light scroll-smooth overflow-x-hidden w-full" lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -359,65 +359,65 @@
 </head>
 
 <body style="background-color: #ffffff !important;"
-  class="bg-white text-[#1a1c1a] font-body antialiased selection:bg-[#adbb98] selection:text-white overflow-x-hidden fade-transition">
+  class="bg-[#faf9f5] text-[#1a1c1a] font-body antialiased selection:bg-[#adbb98] selection:text-white overflow-x-hidden w-full max-w-[100vw] fade-transition">
 
   <main class="relative z-10 w-auto m-[20px] rounded-[32px] overflow-hidden bg-[#faf9f5]">
 
     <!-- Navbar Area -->
     <div id="nav-wrapper"
-      class="fixed top-16 left-6 right-6 z-[100] flex flex-col items-center w-[calc(100%-48px)] pointer-events-none transition-all duration-500">
+      class="fixed top-10 md:top-20 left-1/2 -translate-x-1/2 md:left-6 md:right-6 md:translate-x-0 z-[100] flex flex-col items-center w-[90%] sm:w-[85%] md:w-[calc(100%-48px)] pointer-events-none transition-all duration-500">
       <nav id="floating-navbar"
-        class="relative z-50 w-full max-w-[1280px] bg-white/70 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-4 sm:px-6 lg:px-10 py-3 sm:py-4 flex flex-wrap sm:flex-nowrap justify-between items-center border border-black/5 transition-all duration-500 pointer-events-auto">
+        class="relative z-50 w-full max-w-[1280px] bg-white/70 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-3 py-2 md:px-6 lg:px-4 xl:px-10 md:py-3 lg:py-4 flex items-center justify-between border border-black/5 transition-all duration-500 pointer-events-auto">
         <a id="nav-logo" href="index.html"
-          class="font-headline text-xl sm:text-2xl font-bold text-[#1a1c1a] tracking-wider uppercase transition-all duration-500">
+          class="font-headline text-xs font-semibold tracking-widest md:text-2xl md:font-bold md:tracking-wider text-[#1a1c1a] uppercase transition-all duration-500">
           SALON LOOHA
         </a>
-        <div class="hidden lg:flex gap-10 items-center">
-          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-colors duration-500 font-label text-xs uppercase font-bold tracking-[0.15em]"
+        <div class="hidden lg:flex gap-4 xl:gap-10 items-center">
+          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-all duration-500 font-label text-[10px] xl:text-xs uppercase font-bold tracking-[0.15em]"
             href="index.html">Home</a>
-          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-colors duration-500 font-label text-xs uppercase font-bold tracking-[0.15em]"
+          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-all duration-500 font-label text-[10px] xl:text-xs uppercase font-bold tracking-[0.15em]"
             href="index.html#services-section">Services</a>
-          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-colors duration-500 font-label text-xs uppercase font-bold tracking-[0.15em]"
+          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-all duration-500 font-label text-[10px] xl:text-xs uppercase font-bold tracking-[0.15em]"
             href="index.html#experts">Experts</a>
-          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-colors duration-500 font-label text-xs uppercase font-bold tracking-[0.15em]"
+          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-all duration-500 font-label text-[10px] xl:text-xs uppercase font-bold tracking-[0.15em]"
             href="index.html#reviews">Reviews</a>
-          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-colors duration-500 font-label text-xs uppercase font-bold tracking-[0.15em]"
+          <a class="nav-link text-[#1a1c1a]/60 hover:text-[#1a1c1a] transition-all duration-500 font-label text-[10px] xl:text-xs uppercase font-bold tracking-[0.15em]"
             href="index.html#gallery-section">Gallery</a>
-          <a class="nav-link text-[#1a1c1a] border-b-[2px] border-[#adbb98] pb-0.5 font-label text-xs uppercase font-bold tracking-[0.15em] transition-colors duration-500"
+          <a class="nav-link text-[#1a1c1a] border-b-[2px] border-[#adbb98] pb-0.5 font-label text-[10px] xl:text-xs uppercase font-bold tracking-[0.15em] transition-all duration-500"
             href="about.html#dimalka">About</a>
         </div>
-        <div class="flex items-center gap-3 sm:gap-6 mt-2 sm:mt-0">
+        <div class="flex items-center gap-1.5 md:gap-3 sm:gap-6">
           <button id="open-booking-btn-nav"
-            class="bg-[#adbb98] text-white hover:bg-[#9cae86] transition-all duration-500 px-4 py-2 sm:px-8 sm:py-3 rounded-full font-label text-[10px] sm:text-xs font-bold tracking-[0.15em] uppercase shadow-md hover:-translate-y-0.5 inline-block text-center cursor-pointer">
+            class="inline-block bg-[#adbb98] text-white hover:bg-[#9cae86] transition-all duration-500 px-2.5 py-1 md:px-5 md:py-2.5 lg:px-4 lg:py-2 xl:px-8 xl:py-3 rounded-full font-label text-[9px] xl:text-xs font-bold tracking-wider md:tracking-[0.15em] leading-tight md:leading-normal uppercase shadow-md hover:-translate-y-0.5 cursor-pointer">
             Book Appointment
           </button>
           <button id="mobile-menu-btn"
             class="lg:hidden text-[#1a1c1a] transition-colors duration-500 flex items-center justify-center">
-            <span class="material-symbols-outlined text-2xl sm:text-3xl">menu</span>
+            <span class="material-symbols-outlined text-xl md:text-3xl">menu</span>
           </button>
         </div>
       </nav>
 
       <!-- Mobile Menu Dropdown Drawer -->
       <div id="mobile-menu"
-        class="relative z-40 hidden opacity-0 -translate-y-4 w-full max-w-[1280px] bg-white/95 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.1)] mt-2 border border-black/5 flex-col p-6 gap-6 pointer-events-auto transition-all duration-300 lg:hidden text-center">
-        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+        class="relative z-40 hidden opacity-0 -translate-y-4 w-full max-w-[1280px] bg-[#adbb98]/95 backdrop-blur-md rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.1)] mt-2 border border-black/5 flex-col p-6 gap-6 pointer-events-auto transition-all duration-300 lg:hidden text-center">
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-white transition-colors"
           href="index.html">Home</a>
-        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-white transition-colors"
           href="index.html#services-section">Services</a>
-        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-white transition-colors"
           href="index.html#experts">Experts</a>
-        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-white transition-colors"
           href="index.html#reviews">Reviews</a>
-        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-white transition-colors"
           href="index.html#gallery-section">Gallery</a>
-        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-[#adbb98] transition-colors"
+        <a class="nav-link block text-[#1a1c1a] font-label text-sm uppercase font-bold tracking-[0.15em] hover:text-white transition-colors"
           href="about.html#dimalka">About</a>
       </div>
     </div>
 
     <!-- HERO/TITLE SECTION -->
-    <div class="relative w-full py-24 lg:py-32 flex flex-col items-center text-center mt-2 bg-white"
+    <div class="relative w-full py-8 md:py-24 lg:py-32 flex flex-col items-center text-center mt-2 bg-white"
       data-nav-theme="light">
       <h1
         class="luxury-hero font-display text-4xl lg:text-6xl font-bold text-[#1a1c1a] leading-tight tracking-tight max-w-4xl mx-auto">
@@ -427,9 +427,9 @@
     </div>
 
     <!-- SECTION 1: DIMALKA NUWANTHI -->
-    <section id="dimalka" class="luxury-elena bg-white py-24 lg:py-32 border-t border-on-surface/10"
+    <section id="dimalka" class="luxury-elena bg-white py-8 md:py-24 lg:py-32 border-t border-on-surface/10"
       data-nav-theme="light" style="scroll-margin-top: 40px;">
-      <div class="max-w-[1280px] mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
         <div
           class="reveal relative h-[500px] lg:h-[650px] rounded-[3rem] overflow-hidden shadow-2xl border border-black/5 group">
           <img id="founder-profile-img" src="profile-photos/dimalka.jpeg" alt="Dimalka Nuwanthi"
@@ -476,7 +476,7 @@
 
     <!-- Transform CTA Section -->
     <section
-      class="bg-white py-24 lg:py-32 flex flex-col items-center justify-center text-center border-t border-on-surface/10"
+      class="bg-white py-8 md:py-24 lg:py-32 flex flex-col items-center justify-center text-center border-t border-on-surface/10"
       data-nav-theme="light" style="scroll-margin-top: 140px;">
       <h2 class="font-headline text-3xl lg:text-4xl font-bold text-[#1a1c1a] mb-6 tracking-tight animate-zoom">Ready to
         Transform?</h2>
@@ -484,14 +484,14 @@
         experts to discuss your unique beauty goals.</p>
       <div class="flex flex-wrap justify-center gap-4">
         <button id="open-booking-btn-body"
-          class="border-2 border-white hero-white-glow-btn bg-[#adbb98] text-white hover:bg-[#9cae86] transition-all px-12 py-5 rounded-full font-label text-sm font-bold tracking-[0.15em] uppercase shadow-xl hover:shadow-2xl hover:-translate-y-1 cursor-pointer">Book
+          class="border-2 border-white hero-white-glow-btn bg-[#adbb98] text-white hover:bg-[#9cae86] transition-all px-6 md:px-12 py-3.5 md:py-5 rounded-full font-label text-[11px] md:text-sm font-bold tracking-widest md:tracking-[0.15em] leading-snug md:leading-normal uppercase shadow-xl hover:shadow-2xl hover:-translate-y-1 cursor-pointer w-full max-w-[280px] sm:max-w-xs md:max-w-none md:w-auto">Book
           a Session With Our Experts</button>
       </div>
     </section>
 
     <!-- Sanctuary Visit Details Container -->
-    <section id="about-section" class="bg-white py-24 lg:py-32 border-t border-on-surface/10" data-nav-theme="light"
-      style="scroll-margin-top: 140px;">
+    <section id="about-section" class="bg-white py-8 md:py-24 lg:py-32 border-t border-on-surface/10"
+      data-nav-theme="light" style="scroll-margin-top: 140px;">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="flex flex-col gap-8">
           <h2 class="font-headline text-3xl lg:text-4xl font-bold text-[#1a1c1a] tracking-tight">Visit Our Sanctuary
@@ -535,23 +535,25 @@
     </section>
 
     <!-- Footer Area -->
-    <footer class="bg-[#adbb98] text-white w-full pt-24 pb-8 border-t border-white/20" data-nav-theme="dark">
+    <footer class="bg-[#adbb98] text-white w-full pt-10 md:pt-24 pb-10 md:pb-8 border-t border-white/20"
+      data-nav-theme="dark">
       <div
-        class="max-w-[1200px] mx-auto px-6 lg:px-24 w-full flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
-        <div class="max-w-sm">
+        class="max-w-[1200px] mx-auto px-6 lg:px-24 w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-12 mb-8 md:mb-16 text-center md:text-left">
+        <div class="max-w-sm flex flex-col items-center md:items-start text-center md:text-left">
           <a class="block mb-6" href="index.html#top">
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsX4ZuxrK-Gcyx5cPB7RbV2I8FF4RgHm8apLO_VdmpyN9RNMAzwV3jjC4XmV5Wg-4csON9ZIplW9FhDceoeOv5_EBpKZRh9cu_ZlIxRZ4aNWb15yUJ6oL_AggjU8HEeSuYX8ZPchiexKCePkqY93Z3dlTZV0zELwrHGVdxAqB8eQN3-voN2pXuwnu_N-PqYPR4936TyrQ19tbGFhvGVxVGeFUF-U7q1uNhl4nMi6s25YBIsMDq4lvUBfcYsgfWxskZZ1Po6jxAVZBJ"
-              alt="Salon Looha Logo" class="h-24 w-auto object-contain">
+              alt="Salon Looha Logo" class="w-14 h-auto md:w-auto md:h-24 object-contain">
           </a>
-          <p class="font-body text-white/80 text-sm leading-relaxed mb-6">A sanctuary of style and rejuvenation.
+          <p class="font-body text-white/80 text-sm leading-relaxed my-4 md:my-0 md:mb-6">A sanctuary of style and
+            rejuvenation.
             Redefining modern luxury through organic practices and unparalleled expertise.</p>
         </div>
 
         <!-- Navigation Link Redirections tailored for About page -->
-        <div class="grid grid-cols-2 gap-12 w-full md:w-auto">
-          <div class="flex flex-col gap-4">
-            <h5 class="font-label text-xs uppercase tracking-widest text-white/60 mb-2">Explore</h5>
+        <div class="grid grid-cols-2 md:grid-cols-2 gap-6 md:gap-12 w-full md:w-auto">
+          <div class="flex flex-col items-center md:items-start gap-2 md:gap-4">
+            <h5 class="font-label text-xs uppercase tracking-widest text-white/60 mb-2 font-bold">Explore</h5>
             <a class="font-body text-white hover:text-white/70 transition-colors text-sm"
               href="index.html#services-section">Services</a>
             <a class="font-body text-white hover:text-white/70 transition-colors text-sm" href="index.html#experts">Our
@@ -561,8 +563,8 @@
             <a class="font-body text-white hover:text-white/70 transition-colors text-sm"
               href="index.html#about-section">Contact</a>
           </div>
-          <div class="flex flex-col gap-4">
-            <h5 class="font-label text-xs uppercase tracking-widest text-white/60 mb-2">Legal</h5>
+          <div class="flex flex-col items-center md:items-start gap-2 md:gap-4">
+            <h5 class="font-label text-xs uppercase tracking-widest text-white/60 mb-2 font-bold">Legal</h5>
             <a class="legal-trigger font-body text-white hover:text-white/70 transition-colors text-sm cursor-pointer"
               data-legal="privacy">Privacy Policy</a>
             <a class="legal-trigger font-body text-white hover:text-white/70 transition-colors text-sm cursor-pointer"
@@ -574,19 +576,12 @@
       </div>
 
       <div
-        class="max-w-[1200px] mx-auto px-6 lg:px-24 w-full pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        class="max-w-[1200px] mx-auto px-6 lg:px-24 w-full pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 text-center">
         <p class="font-label text-xs text-white/60 uppercase tracking-wider">© 2026 SALON LOOHA. DESIGNED BY GRAVITY
           HOUSE.</p>
         <p class="font-label text-xs text-white/60 uppercase tracking-wider">Ave Maria Rd, Negombo 11410</p>
       </div>
 
-      <!-- Universal Scroll Up Arrow -->
-      <div class="flex justify-center pt-10 w-full">
-        <a href="#" onclick="event.stopPropagation(); window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
-          class="flex items-center justify-center w-12 h-12 rounded-full border border-white/40 bg-white/10 text-white hover:bg-white hover:text-[#1a1c1a] transition-all duration-300 animate-bounce cursor-pointer">
-          <span class="material-symbols-outlined text-xl font-bold">arrow_upward</span>
-        </a>
-      </div>
     </footer>
 
   </main>
@@ -595,17 +590,17 @@
   <div id="booking-modal"
     class="fixed inset-0 z-[150] bg-black/60 opacity-0 invisible flex items-center justify-center p-4 backdrop-blur-md">
     <div id="booking-modal-content"
-      class="bg-[#faf9f5] w-full max-w-[600px] rounded-[2.5rem] shadow-2xl border border-black/5 overflow-hidden scale-95 relative max-h-[90vh] flex flex-col">
+      class="bg-[#faf9f5] w-full max-w-[600px] rounded-[2.5rem] shadow-2xl border border-black/5 overflow-y-auto overflow-x-hidden md:overflow-hidden scale-95 relative max-h-[85vh] md:max-h-[90vh] flex flex-col">
       <button id="close-booking-btn"
         class="absolute top-6 right-6 w-10 h-10 rounded-full bg-[#1a1c1a]/5 hover:bg-[#1a1c1a]/10 transition-colors flex items-center justify-center text-[#1a1c1a] z-10 cursor-pointer"><span
           class="material-symbols-outlined">close</span></button>
-      <div class="p-8 lg:p-10 overflow-y-auto">
-        <div class="text-center mb-6">
+      <div class="p-8 lg:p-10 overflow-visible md:overflow-y-auto shrink-0 md:shrink">
+        <div class="text-center mb-6 mt-5 md:mt-0 relative z-10">
           <h3 class="font-headline text-2xl lg:text-3xl font-bold text-[#1a1c1a] tracking-tight">Book Your Appointment
           </h3>
           <p class="font-body text-sm text-[#1a1c1a]/70 mt-1">Choose your preferred method to schedule a session.</p>
         </div>
-        <div class="mb-6">
+        <div class="mb-5 md:mb-6 mt-2 md:mt-0 relative z-10">
           <!-- Calendly link widget begin -->
           <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
           <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -637,33 +632,38 @@
             Instantly</span>
           <div class="flex-grow border-t border-black/10"></div>
         </div>
-        <form id="whatsapp-booking-form-modal" class="flex flex-col gap-4 mt-2">
-          <div class="flex flex-col gap-1">
+        <form id="whatsapp-booking-form-modal"
+          class="flex flex-col gap-3 md:gap-4 items-stretch w-full mt-2 relative z-10">
+          <div class="flex flex-col gap-1 md:gap-1.5 w-full">
             <label for="modalClientName"
-              class="font-label text-[11px] uppercase tracking-widest font-bold text-[#1a1c1a]">Client Name</label>
+              class="font-label text-[10px] md:text-[11px] uppercase tracking-wider font-semibold md:font-bold text-neutral-700 md:text-[#1a1c1a]">Client
+              Name</label>
             <input type="text" id="modalClientName" required
-              class="w-full bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-4 py-2.5 font-body text-sm text-[#1a1c1a] placeholder-[#1a1c1a]/40 outline-none transition-all"
+              class="w-full bg-neutral-50/80 md:bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-3.5 py-2.5 md:px-4 md:py-2.5 font-body text-sm text-[#1a1c1a] placeholder-[#1a1c1a]/40 outline-none transition-all"
               placeholder="Your Full Name">
           </div>
-          <div class="flex flex-col gap-1">
+          <div class="flex flex-col gap-1 md:gap-1.5 w-full">
             <label for="modalClientEmail"
-              class="font-label text-[11px] uppercase tracking-widest font-bold text-[#1a1c1a]">Email Address</label>
+              class="font-label text-[10px] md:text-[11px] uppercase tracking-wider font-semibold md:font-bold text-neutral-700 md:text-[#1a1c1a]">Email
+              Address</label>
             <input type="email" id="modalClientEmail" required
-              class="w-full bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-4 py-2.5 font-body text-sm text-[#1a1c1a] placeholder-[#1a1c1a]/40 outline-none transition-all"
+              class="w-full bg-neutral-50/80 md:bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-3.5 py-2.5 md:px-4 md:py-2.5 font-body text-sm text-[#1a1c1a] placeholder-[#1a1c1a]/40 outline-none transition-all"
               placeholder="you@example.com">
           </div>
-          <div class="flex flex-col gap-1">
+          <div class="flex flex-col gap-1 md:gap-1.5 w-full">
             <label for="modalClientPhone"
-              class="font-label text-[11px] uppercase tracking-widest font-bold text-[#1a1c1a]">WhatsApp Number</label>
+              class="font-label text-[10px] md:text-[11px] uppercase tracking-wider font-semibold md:font-bold text-neutral-700 md:text-[#1a1c1a]">WhatsApp
+              Number</label>
             <input type="tel" id="modalClientPhone" required
-              class="w-full bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-4 py-2.5 font-body text-sm text-[#1a1c1a] placeholder-[#1a1c1a]/40 outline-none transition-all"
+              class="w-full bg-neutral-50/80 md:bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-3.5 py-2.5 md:px-4 md:py-2.5 font-body text-sm text-[#1a1c1a] placeholder-[#1a1c1a]/40 outline-none transition-all"
               placeholder="e.g. +94 77 123 4567">
           </div>
-          <div class="flex flex-col gap-1">
+          <div class="flex flex-col gap-1 md:gap-1.5 w-full">
             <label for="modalServiceNeeded"
-              class="font-label text-[11px] uppercase tracking-widest font-bold text-[#1a1c1a]">Service Needed</label>
+              class="font-label text-[10px] md:text-[11px] uppercase tracking-wider font-semibold md:font-bold text-neutral-700 md:text-[#1a1c1a]">Service
+              Needed</label>
             <select id="modalServiceNeeded" required
-              class="w-full bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-4 py-2.5 font-body text-sm text-[#1a1c1a] outline-none transition-all appearance-none cursor-pointer">
+              class="w-full bg-neutral-50/80 md:bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-3.5 py-2.5 md:px-4 md:py-2.5 font-body text-sm text-[#1a1c1a] outline-none transition-all appearance-none cursor-pointer">
               <option value="" disabled selected>Select a service</option>
               <option value="Master Haircut">Master Haircut</option>
               <option value="Bridal & Grooming">Bridal & Grooming</option>
@@ -672,12 +672,13 @@
               <option value="Other">Other Consultation</option>
             </select>
           </div>
-          <div class="flex flex-col gap-1">
+          <div class="flex flex-col gap-1 md:gap-1.5 w-full">
             <label for="modalClientMessage"
-              class="font-label text-[11px] uppercase tracking-widest font-bold text-[#1a1c1a]">Message /
+              class="font-label text-[10px] md:text-[11px] uppercase tracking-wider font-semibold md:font-bold text-neutral-700 md:text-[#1a1c1a]">Message
+              /
               Details</label>
             <textarea id="modalClientMessage" rows="2"
-              class="w-full bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-4 py-2.5 font-body text-sm text-[#1a1c1a] placeholder-[#1a1c1a]/40 outline-none transition-all resize-none"
+              class="w-full bg-neutral-50/80 md:bg-[#f4f4f0] border-transparent focus:border-[#adbb98] focus:ring-0 rounded-xl px-3.5 py-2.5 md:px-4 md:py-2.5 font-body text-sm text-[#1a1c1a] placeholder-[#1a1c1a]/40 outline-none transition-all resize-none"
               placeholder="Preferred date, time or questions..."></textarea>
           </div>
           <button type="submit"
@@ -991,23 +992,24 @@
   </script>
 
   <!-- 📲 Fixed Premium Floating Social Media Sidebar Widget 📲 -->
-  <div class="fixed bottom-12 right-12 z-50 flex flex-col gap-4">
+  <div
+    class="fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-1/2 -translate-x-1/2 md:bottom-12 md:left-auto md:right-12 md:translate-x-0 z-[100] flex flex-row md:flex-col gap-3 md:gap-4 w-[calc(100%-1.5rem)] sm:w-auto justify-center">
     <a href="https://web.facebook.com/SalonLooha" target="_blank"
-      class="w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1a1c1a] shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300 transform hover:-translate-x-1 cursor-pointer group">
+      class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1a1c1a] shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-x-1 md:hover:translate-y-0 cursor-pointer group">
       <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
       </svg>
     </a>
     <a href="https://www.instagram.com/salon_looha" target="_blank"
-      class="w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1a1c1a] shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300 transform hover:-translate-x-1 cursor-pointer group">
+      class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1a1c1a] shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-x-1 md:hover:translate-y-0 cursor-pointer group">
       <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
       </svg>
     </a>
     <a href="https://www.tiktok.com/@loohaunisexsalon?_r=1&_t=ZS-986LYGqBx13" target="_blank" rel="noopener noreferrer"
-      class="w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1a1c1a] shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300 transform hover:-translate-x-1 cursor-pointer group"
+      class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1a1c1a] shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-x-1 md:hover:translate-y-0 cursor-pointer group"
       aria-label="TikTok">
       <svg class="w-5 h-5 block" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
         style="display: block; margin: auto;">
@@ -1016,8 +1018,8 @@
       </svg>
     </a>
     <a href="https://api.whatsapp.com/send?phone=94776201254" target="_blank"
-      class="w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1a1c1a] shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300 transform hover:-translate-x-1 cursor-pointer group">
-      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1a1c1a] shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#adbb98] hover:text-white hover:border-[#adbb98] transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-x-1 md:hover:translate-y-0 cursor-pointer group">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
       </svg>
