@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="light scroll-smooth overflow-x-hidden w-full" lang="en">
 
 <head>
@@ -648,21 +648,121 @@
     </section>
 
     <!-- Reviews -->
-    <section id="reviews" class="bg-[#adbb98] text-white py-8 md:py-24 lg:py-32 overflow-x-hidden" data-nav-theme="dark"
-      style="scroll-margin-top: 140px;">
-      <div class="w-full max-w-[1280px] mx-auto px-3 md:px-6 lg:px-24">
-        <div
-          class="w-full max-w-3xl mx-auto px-6 pt-8 md:pt-12 mb-6 md:mb-16 text-center flex flex-col items-center justify-center">
-          <h2
-            class="luxury-float-header font-headline text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">
-            What Our Clients Say</h2>
-        </div>
-        <div class="w-full max-w-5xl mx-auto px-6">
-          <div
-            class="w-full min-h-[450px] md:min-h-[520px] flex items-center justify-center transition-all duration-300">
-            <script defer async src='https://cdn.trustindex.io/loader.js?9f8035a77bb10636c456ae5aaf0'></script>
+    <section id="reviews" class="bg-[#adbb98] text-white py-14 md:py-28 overflow-x-hidden" data-nav-theme="dark" style="scroll-margin-top: 140px;">
+      <div class="w-full max-w-[1280px] mx-auto px-4 md:px-6 lg:px-24">
+        
+        <!-- Section Header with Google Rating Badge -->
+        <div class="w-full max-w-3xl mx-auto text-center flex flex-col items-center justify-center mb-12">
+          <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 mb-4 shadow-sm">
+            <svg class="w-4 h-4 text-amber-300 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <span class="font-label text-xs font-bold uppercase tracking-wider text-white">4.9 / 5.0 Rating on Google</span>
           </div>
+          <h2 class="luxury-float-header font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight">What Our Clients Say</h2>
         </div>
+
+        <!-- Review Cards Grid (6 Reviews) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full max-w-7xl mx-auto">
+          
+          <!-- Review 1 -->
+          <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <div>
+              <div class="flex text-amber-300 mb-3 text-sm">★★★★★</div>
+              <p class="font-body text-xs md:text-sm text-white/90 leading-relaxed italic mb-6">"Absolutely loved my bridal dressing! Dimalka and her team paid attention to every tiny detail. My makeup stayed flawless all day despite the tropical weather."</p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-white/15">
+              <div class="w-9 h-9 rounded-full bg-white/20 font-headline font-bold text-white text-xs flex items-center justify-center border border-white/30">SP</div>
+              <div>
+                <h4 class="font-headline font-bold text-sm text-white">Shehani Perera</h4>
+                <p class="font-label text-[10px] text-white/70 uppercase font-semibold">Bridal Makeover</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <div>
+              <div class="flex text-amber-300 mb-3 text-sm">★★★★★</div>
+              <p class="font-body text-xs md:text-sm text-white/90 leading-relaxed italic mb-6">"Best salon in Negombo for nail artistry! Very professional service, ultra-clean environment, and high-quality gel extension products. Highly recommended!"</p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-white/15">
+              <div class="w-9 h-9 rounded-full bg-white/20 font-headline font-bold text-white text-xs flex items-center justify-center border border-white/30">NF</div>
+              <div>
+                <h4 class="font-headline font-bold text-sm text-white">Nipuni Fernando</h4>
+                <p class="font-label text-[10px] text-white/70 uppercase font-semibold">Nail Artistry</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <div>
+              <div class="flex text-amber-300 mb-3 text-sm">★★★★★</div>
+              <p class="font-body text-xs md:text-sm text-white/90 leading-relaxed italic mb-6">"Amazing hair transformation! Their Keratin treatment worked wonders for my frizzy hair. Great atmosphere and extremely friendly staff."</p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-white/15">
+              <div class="w-9 h-9 rounded-full bg-white/20 font-headline font-bold text-white text-xs flex items-center justify-center border border-white/30">KS</div>
+              <div>
+                <h4 class="font-headline font-bold text-sm text-white">Kavindi Silva</h4>
+                <p class="font-label text-[10px] text-white/70 uppercase font-semibold">Keratin Care</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <div>
+              <div class="flex text-amber-300 mb-3 text-sm">★★★★★</div>
+              <p class="font-body text-xs md:text-sm text-white/90 leading-relaxed italic mb-6">"The VIP pampering day package is worth every cent! From clinical skincare facial to hair styling, everything felt so luxurious and relaxing."</p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-white/15">
+              <div class="w-9 h-9 rounded-full bg-white/20 font-headline font-bold text-white text-xs flex items-center justify-center border border-white/30">MD</div>
+              <div>
+                <h4 class="font-headline font-bold text-sm text-white">Mary De Silva</h4>
+                <p class="font-label text-[10px] text-white/70 uppercase font-semibold">VIP Transformation</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 5 -->
+          <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <div>
+              <div class="flex text-amber-300 mb-3 text-sm">★★★★★</div>
+              <p class="font-body text-xs md:text-sm text-white/90 leading-relaxed italic mb-6">"Exceeded all my expectations for groom styling! Clean cuts and professional skin care prep before our destination wedding photo session."</p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-white/15">
+              <div class="w-9 h-9 rounded-full bg-white/20 font-headline font-bold text-white text-xs flex items-center justify-center border border-white/30">DR</div>
+              <div>
+                <h4 class="font-headline font-bold text-sm text-white">Dilan Rodrigo</h4>
+                <p class="font-label text-[10px] text-white/70 uppercase font-semibold">Groom Styling</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 6 -->
+          <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <div>
+              <div class="flex text-amber-300 mb-3 text-sm">★★★★★</div>
+              <p class="font-body text-xs md:text-sm text-white/90 leading-relaxed italic mb-6">"Such a welcoming sanctuary! The Hydra Facial left my skin glowing for weeks. Definitely my go-to luxury salon in Negombo now."</p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-white/15">
+              <div class="w-9 h-9 rounded-full bg-white/20 font-headline font-bold text-white text-xs flex items-center justify-center border border-white/30">AJ</div>
+              <div>
+                <h4 class="font-headline font-bold text-sm text-white">Anusha Jayasinghe</h4>
+                <p class="font-label text-[10px] text-white/70 uppercase font-semibold">Clinical Skincare</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Google Business Call to Action Button -->
+        <div class="flex justify-center mt-12">
+          <a href="https://maps.app.goo.gl/ChIJ-Y-95bd0e8830467" target="_blank" rel="noopener opacity-90 hover:opacity-100" class="px-8 py-3.5 rounded-full border-2 border-white bg-white/10 hover:bg-white hover:text-[#adbb98] text-white font-label text-xs uppercase font-bold tracking-[0.15em] transition-all duration-300 flex items-center gap-2 shadow-md">
+            <span>Read All Reviews on Google Maps</span>
+            <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </a>
+        </div>
+
       </div>
     </section>
 
